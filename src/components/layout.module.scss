@@ -1,0 +1,14 @@
+@import '../styles/index.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 1rem;
+}
+
+.content {
+    flex-grow: 1;
+}

@@ -1,0 +1,44 @@
+.footer {
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+
+    a {
+        color: rgba(0, 0, 0, 0.3);
+        transition: color .3s ease-in-out;
+
+        &:hover {
+            color: rgba(75, 0, 130, 1);
+        }
+    }
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    img, svg {
+        margin: 0 0.25rem;
+        display: inline-block;
+    }
+    a {
+        display: flex;
+    }
+}
+.small {
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.heart {
+    color: var(--custom-red);
+}
+
+.gatsby-logo {
+    height: 20px;
+    display: inline-block;
+}

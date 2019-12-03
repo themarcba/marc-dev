@@ -1,0 +1,1 @@
+require("prism-themes/themes/prism-synthwave84.css")

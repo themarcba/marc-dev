@@ -1,0 +1,65 @@
+@mixin category {
+    border-radius: 6px;
+    padding: 1px 10px;
+    display: inline-block;
+    margin: 0 0.5rem 0.3rem 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background: #333;
+    color: #fff;
+}
+
+.categories {
+    div {
+        @include category();
+    }
+}
+.category-javascript, .category-es6 {
+    background: #f7df1e !important;
+    color: #333 !important;
+}
+
+.category-vue {
+    background: #42b883 !important;
+    color: #fff !important;
+}
+
+.category-react {
+    background: #00d8ff !important;
+    color: #fff !important;
+}
+
+.category-node {
+    background: #6cc24a !important;
+    color: #215732 !important;
+}
+
+.category-gatsby {
+    background: #362066 !important;
+    color: #fff !important;
+}
+
+.category-rails {
+    background: #cc0000 !important;
+    color: #fff !important;
+}
+
+.category-git {
+    background: #4078c0 !important;
+    color: #fff !important;
+}
+
+.category-css {
+    background: #274DE4 !important;
+    color: #fff !important;
+}
+
+.category-anecdote {
+    background: #34495e !important;
+    color: #fff !important;
+}
+
+.category-announcement {
+    background: #e74c3c !important;
+    color: #fff !important;
+}

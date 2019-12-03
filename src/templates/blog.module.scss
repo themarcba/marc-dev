@@ -1,0 +1,216 @@
+@import '../styles/index.scss';
+
+@mixin gradient-text {
+    color: #6e3a6c;
+    background: -webkit-gradient(linear, left top, right top, from(#e48a28), color-stop(50%, #cc4856), to(#6e3a6c));
+    background: linear-gradient(to right, #e48a28 0%, #cc4856 50%, #6e3a6c 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.post-info {
+    color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    // align-items: center;
+    font-size: 0.9rem;
+    // margin-bottom: 3rem;
+}
+
+.author-image {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.cover-image {
+    -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+
+    @media screen and (max-width: 500px) {
+        height: 200px;
+    }
+
+    @media screen and (min-width: 501px) and (max-width: 750px) {
+        height: 300px;
+    }
+
+    @media screen and (min-width: 751px) {
+        height: 400px;
+    }
+}
+
+.cover-image-placeholder {
+    width: 100%;
+    height: 400px;
+    margin: 2rem 0;
+}
+
+.md {
+    a {
+        @include link();
+    }
+    img {
+        border-radius: 8px; 
+    }
+    pre {
+        border-radius: 8px;
+        -webkit-box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.2);
+        margin: 2rem 0;
+        font-size: 0.9rem;
+    }
+
+    pre {
+        border-radius: 1rem;
+        transition: border-radius 0.5s;
+
+        &:hover {
+            border-radius: 1rem 0 1rem 1rem;
+        }
+    }
+
+    del {
+        color: rgba(0, 0, 0, 0.3);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: rgba(0, 0, 0, 0.7);
+        position: relative;
+        transition: 0.5s all ease-in-out;
+
+        &:before {
+            transition: opacity 0.5s ease-in-out;
+            position: absolute;
+            opacity: 0;
+            @include gradient-text;
+        }
+    }
+
+    h1:hover,
+    h2:hover,
+    h3:hover,
+    h4:hover,
+    h5:hover,
+    h6:hover {
+        color: rgba(0, 0, 0, 0.7);
+
+        &:before {
+            opacity: 1;
+        }
+    }
+
+    h1 {
+        &:hover {
+            padding-left: 35px;
+        }
+
+        &:before {
+            margin-left: -35px;
+            content: '#';
+        }
+    }
+
+    h2 {
+        &:hover {
+            padding-left: 45px;
+        }
+
+        &:before {
+            margin-left: -45px;
+            content: '##';
+        }
+    }
+
+    h3 {
+        &:hover {
+            padding-left: 55px;
+        }
+
+        &:before {
+            margin-left: -55px;
+            content: '###';
+        }
+    }
+
+    h4 {
+        &:hover {
+            padding-left: 50px;
+        }
+
+        &:before {
+            margin-left: -50px;
+            content: '####';
+        }
+    }
+
+    h5 {
+        &:hover {
+            padding-left: 52px;
+        }
+
+        &:before {
+            margin-left: -52px;
+            content: '#####';
+        }
+    }
+
+    h6 {
+        &:hover {
+            padding-left: 55px;
+        }
+
+        &:before {
+            margin-left: -55px;
+            content: '######';
+        }
+    }
+
+    p {
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    code {
+        padding: 4px 8px !important;
+
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+
+    blockquote {
+        border-right: 0;
+        border-left-width: 3px;
+        border-style: solid;
+        border-image: linear-gradient(to bottom, #e48a28 0%, #cc4856 50%, #6e3a6c 100%) 1 100%;
+        padding-left: 2.5rem;
+
+        &:before {
+            margin-left: -2rem;
+            content: "\201C";
+            font-family: Georgia, serif;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.2);
+            position: absolute;
+        }
+    }
+}
