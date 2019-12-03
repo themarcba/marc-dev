@@ -51,11 +51,7 @@ const IndexPage = () => {
                 <p>
                     I mostly work with <strong>JavaScript</strong> (Node.js
                     &amp; Vue.js), but have also experience with{" "}
-                    <strong>Ruby on Rails</strong>, <strong>PHP</strong>, and{" "}
-                    <Link to="/skills" className={mainStyles.link}>
-                        others
-                    </Link>
-                    .
+                    <strong>Ruby on Rails</strong>, <strong>PHP</strong>, and others.
                 </p>
 
                 <p>
