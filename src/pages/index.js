@@ -37,11 +37,15 @@ const IndexPage = () => {
 
                 <h2>
                     I'm Marc and
-                    <br />I&nbsp;
-                    <FontAwesomeIcon
-                        icon={faHeart}
-                        className={indexStyles.heart}
-                    />&nbsp;web development!
+                    <br />
+                    I&nbsp;
+                    <span>
+                        <FontAwesomeIcon
+                            icon={faHeart}
+                            className={indexStyles.heart}
+                        />
+                    </span>
+                    &nbsp;web development!
                 </h2>
                 <p>
                     I am a freelancing <strong>full-stack developer</strong>{" "}
@@ -51,7 +55,8 @@ const IndexPage = () => {
                 <p>
                     I mostly work with <strong>JavaScript</strong> (Node.js
                     &amp; Vue.js), but have also experience with{" "}
-                    <strong>Ruby on Rails</strong>, <strong>PHP</strong>, and others.
+                    <strong>Ruby on Rails</strong>, <strong>PHP</strong>, and
+                    others.
                 </p>
 
                 <p>
