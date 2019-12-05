@@ -39,12 +39,10 @@ const IndexPage = () => {
                     I'm Marc and
                     <br />
                     I&nbsp;
-                    <span>
-                        <FontAwesomeIcon
-                            icon={faHeart}
-                            className={indexStyles.heart}
-                        />
-                    </span>
+                    <FontAwesomeIcon
+                        icon={faHeart}
+                        className={indexStyles.heart}
+                    />
                     &nbsp;web development!
                 </h2>
                 <p>
