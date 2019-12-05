@@ -15,10 +15,14 @@ import camelCase from "camelcase"
 const BlogPage = () => {
     const data = useStaticQuery(graphql`
         query {
-            allContentfulBlogPost(sort: { fields: publishedAt, order: DESC }) {
+            allContentfulBlogPost(
+                sort: { fields: publishedAt, order: DESC }
+                filter: { hideFromList: { ne: true } }
+            ) {
                 edges {
                     node {
                         title
+                        hideFromList
                         slug
                         excerpt {
                             childMarkdownRemark {

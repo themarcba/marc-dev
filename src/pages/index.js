@@ -17,7 +17,6 @@ const IndexPage = () => {
                     <Typist
                         avgTypingDelay={130}
                         stdTypingDelay={30}
-                        startDelay={500}
                     >
                         <span>Hello!</span>
                         <Typist.Backspace count={6} delay={3000} />
