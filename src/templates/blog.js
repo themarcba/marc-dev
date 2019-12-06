@@ -39,9 +39,7 @@ export const query = graphql`
 
 const Blog = props => {
     let coverImage
-    if (props.data.contentfulBlogPost.coverImage) {
-        console.log('@@@@@@@@@@@@', props.data.contentfulBlogPost.coverImage.fluid);
-        
+    if (props.data.contentfulBlogPost.coverImage) {        
         coverImage = (
             <div>
                 <Img
