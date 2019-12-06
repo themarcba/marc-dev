@@ -47,8 +47,7 @@ export const query = graphql`
 
 const Blog = props => {
     let coverImage
-    let socialCardCoverImageUrl
-    let socialCardType
+    let socialCardMeta
     if (props.data.contentfulBlogPost.coverImage) {
         coverImage = (
             <div>
@@ -58,22 +57,51 @@ const Blog = props => {
                 />
             </div>
         )
-        socialCardType = 'summary_large_image'
-        socialCardCoverImageUrl =
-            props.data.contentfulBlogPost.coverImage.fixed.src
+        socialCardMeta = [
+            { name: "twitter:card", content: "summary_large_image" },
+            { name: "twitter:site", content: "@_marcba" },
+            {
+                name: "twitter:title",
+                content: props.data.contentfulBlogPost.title,
+            },
+            {
+                name: "twitter:description",
+                content:
+                    props.data.contentfulBlogPost.excerpt.childMarkdownRemark
+                        .rawMarkdownBody,
+            },
+            {
+                name: "twitter:image",
+                content: props.data.contentfulBlogPost.coverImage.fixed.src,
+            },
+        ]
+    } else {
+        socialCardMeta = [
+            { name: "twitter:card", content: "summary_large_image" },
+            { name: "twitter:site", content: "@_marcba" },
+            {
+                name: "twitter:title",
+                content: props.data.contentfulBlogPost.title,
+            },
+            {
+                name: "twitter:description",
+                content:
+                    props.data.contentfulBlogPost.excerpt.childMarkdownRemark
+                        .rawMarkdownBody,
+            },
+            {
+                name: "twitter:image",
+                content: "https://marc.dev/images/socialCard.jpg",
+            },
+        ]
     }
 
     return (
         <Layout>
             <Head
                 title={props.data.contentfulBlogPost.title}
-                excerpt={
-                    props.data.contentfulBlogPost.excerpt.childMarkdownRemark
-                        .rawMarkdownBody
-                }
-                coverImage={socialCardCoverImageUrl}
                 canonicalUrl={props.data.contentfulBlogPost.canonicalUrl}
-                socialCardType={socialCardType}
+                socialCardMeta={socialCardMeta}
             />
 
             <h1 className={blogStyle.title}>

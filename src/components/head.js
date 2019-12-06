@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Head = ({ title, excerpt, coverImage, socialCardType, canonicalUrl }) => {
+const Head = ({ title, socialCardMeta, canonicalUrl }) => {
     const data = useStaticQuery(graphql`
         query {
             site {
@@ -13,14 +13,25 @@ const Head = ({ title, excerpt, coverImage, socialCardType, canonicalUrl }) => {
         }
     `)
 
-    let meta = [
-        { name: "twitter:card", content: socialCardType || "summary" },
-        { name: "twitter:site", content: "@_marcba" },
-    ]
-
-    if (title) meta.push({ name: "twitter:title", content: title })
-    if (excerpt) meta.push({ name: "twitter:description", content: excerpt })
-    if (coverImage) meta.push({ name: "twitter:image", content: coverImage })
+    if (!socialCardMeta) {
+        socialCardMeta = [
+            { name: "twitter:card", content: "summary_large_image" },
+            { name: "twitter:site", content: "@_marcba" },
+            {
+                name: "twitter:title",
+                content: title,
+            },
+            {
+                name: "twitter:description",
+                content:
+                    "Marc is a Full-Stack Web Developer based in Luxembourg",
+            },
+            {
+                name: "twitter:image",
+                content: "https://marc.dev/images/socialCard.jpg",
+            },
+        ]
+    }
 
     return (
         <>
@@ -37,7 +48,7 @@ const Head = ({ title, excerpt, coverImage, socialCardType, canonicalUrl }) => {
                           ]
                         : []
                 }
-                meta={meta}
+                meta={socialCardMeta}
             ></Helmet>
         </>
     )
