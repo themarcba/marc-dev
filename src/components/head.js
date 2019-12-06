@@ -14,7 +14,7 @@ const Head = ({ title, excerpt, coverImage, socialCardType, canonicalUrl }) => {
     `)
 
     let meta = [
-        { name: "twitter:card", content: "summary" || socialCardType },
+        { name: "twitter:card", content: socialCardType || "summary" },
         { name: "twitter:site", content: "@_marcba" },
     ]
 
