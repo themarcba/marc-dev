@@ -47,6 +47,8 @@ export const query = graphql`
 
 const Blog = props => {
     let coverImage
+    let socialCardCoverImageUrl
+    let socialCardType
     if (props.data.contentfulBlogPost.coverImage) {
         coverImage = (
             <div>
@@ -56,15 +58,22 @@ const Blog = props => {
                 />
             </div>
         )
+        socialCardType = 'summary_large_image'
+        socialCardCoverImageUrl =
+            props.data.contentfulBlogPost.coverImage.fixed.src
     }
 
     return (
         <Layout>
             <Head
                 title={props.data.contentfulBlogPost.title}
-                excerpt={props.data.contentfulBlogPost.excerpt.childMarkdownRemark.rawMarkdownBody}
-                coverImage={props.data.contentfulBlogPost.coverImage.fixed.src}
+                excerpt={
+                    props.data.contentfulBlogPost.excerpt.childMarkdownRemark
+                        .rawMarkdownBody
+                }
+                coverImage={socialCardCoverImageUrl}
                 canonicalUrl={props.data.contentfulBlogPost.canonicalUrl}
+                socialCardType={socialCardType}
             />
 
             <h1 className={blogStyle.title}>
