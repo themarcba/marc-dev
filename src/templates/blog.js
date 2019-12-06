@@ -25,6 +25,14 @@ export const query = graphql`
                     src
                     srcSet
                 }
+                fixed(width: 1200) {
+                    src
+                }
+            }
+            excerpt {
+                childMarkdownRemark {
+                    rawMarkdownBody
+                }
             }
         }
         file(relativePath: { eq: "profile.jpg" }) {
@@ -39,7 +47,7 @@ export const query = graphql`
 
 const Blog = props => {
     let coverImage
-    if (props.data.contentfulBlogPost.coverImage) {        
+    if (props.data.contentfulBlogPost.coverImage) {
         coverImage = (
             <div>
                 <Img
@@ -54,6 +62,8 @@ const Blog = props => {
         <Layout>
             <Head
                 title={props.data.contentfulBlogPost.title}
+                excerpt={props.data.contentfulBlogPost.excerpt.childMarkdownRemark.rawMarkdownBody}
+                coverImage={props.data.contentfulBlogPost.coverImage.fixed.src}
                 canonicalUrl={props.data.contentfulBlogPost.canonicalUrl}
             />
 
