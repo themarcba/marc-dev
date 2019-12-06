@@ -72,7 +72,7 @@ const Blog = props => {
             },
             {
                 name: "twitter:image",
-                content: props.data.contentfulBlogPost.coverImage.fixed.src,
+                content: `https:${props.data.contentfulBlogPost.coverImage.fixed.src}`,
             },
         ]
     } else {
