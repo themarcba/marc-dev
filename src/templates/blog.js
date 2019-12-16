@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import moment from "moment"
 import Img from "gatsby-image"
 import blogStyle from "./blog.module.scss"
 import Layout from "../components/layout"
@@ -10,7 +11,7 @@ export const query = graphql`
     query($slug: String!) {
         contentfulBlogPost(slug: { eq: $slug }) {
             title
-            publishedAt(formatString: "MMMM Do, YYYY")
+            publishedAt
             slug
             canonicalUrl
             md {
@@ -109,7 +110,7 @@ const Blog = props => {
             </h1>
 
             <p className={blogStyle.postInfo}>
-                {props.data.contentfulBlogPost.publishedAt}
+                {moment(props.data.contentfulBlogPost.publishedAt).format('MMMM Do, YYYY')}
                 &nbsp;&middot;&nbsp;
                 <span>by Marc Backes</span>
                 <Link to="/about">

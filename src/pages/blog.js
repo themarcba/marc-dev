@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-
+import moment from "moment"
 import blogStyles from "./blog.module.scss"
 import categoryStyles from "./blog-categories.module.scss"
 import Head from "../components/head"
@@ -35,7 +35,7 @@ const BlogPage = () => {
                             }
                         }
                         categories
-                        publishedAt(formatString: "MMMM Do, YYYY")
+                        publishedAt
                         coverImage {
                             title
                             fluid {
@@ -60,64 +60,61 @@ const BlogPage = () => {
             ""
         )
 
+    const isPublished = node => node.publishedAt <= new Date()
+
+    const getPost = node => {
+        return (
+            <div className={blogStyles.post}>
+                <Link to={`/blog/${node.slug}`} className={blogStyles.postLink}>
+                    <div className={blogStyles.readTime}>
+                        <FontAwesomeIcon icon={faClock} />
+                        &nbsp;
+                        {pluralize(
+                            "minutes",
+                            node.md.childMarkdownRemark.timeToRead,
+                            true
+                        )}
+                        &nbsp;read
+                    </div>
+                    {getCoverImage(node)}
+                </Link>
+                <div className={blogStyles.postContent}>
+                    <div className={categoryStyles.categories}>
+                        {node.categories.map(category => (
+                            <div
+                                className={
+                                    categoryStyles[
+                                        camelCase(`category-${category}`)
+                                    ]
+                                }
+                            >
+                                #{category}
+                            </div>
+                        ))}
+                    </div>
+                    <Link
+                        to={`/blog/${node.slug}`}
+                        className={blogStyles.postLink}
+                    >
+                        <h2>{node.title}</h2>
+                    </Link>
+                    <p>{node.excerpt.childMarkdownRemark.rawMarkdownBody}</p>
+                    <p className={blogStyles.postDate}>
+                        <FontAwesomeIcon icon={faCalendar} />
+                        &nbsp;
+                        {moment(node.publishedAt).format("MMMM Do, YYYY")}
+                    </p>
+                </div>
+            </div>
+        )
+    }
     return (
         <Layout>
             <Head title="Blog" />
             <div className={blogStyles.posts}>
-                {data.allContentfulBlogPost.edges.map(({ node }) => (
-                    <div className={blogStyles.post}>
-                        <Link
-                            to={`/blog/${node.slug}`}
-                            className={blogStyles.postLink}
-                        >
-                            <div className={blogStyles.readTime}>
-                                <FontAwesomeIcon icon={faClock} />
-                                &nbsp;
-                                {pluralize(
-                                    "minutes",
-                                    node.md.childMarkdownRemark.timeToRead,
-                                    true
-                                )}
-                                &nbsp;read
-                            </div>
-                            {getCoverImage(node)}
-                        </Link>
-                        <div className={blogStyles.postContent}>
-                            <div className={categoryStyles.categories}>
-                                {node.categories.map(category => (
-                                    <div
-                                        className={
-                                            categoryStyles[
-                                                camelCase(
-                                                    `category-${category}`
-                                                )
-                                            ]
-                                        }
-                                    >
-                                        #{category}
-                                    </div>
-                                ))}
-                            </div>
-                            <Link
-                                to={`/blog/${node.slug}`}
-                                className={blogStyles.postLink}
-                            >
-                                <h2>{node.title}</h2>
-                            </Link>
-                            <p>
-                                {
-                                    node.excerpt.childMarkdownRemark
-                                        .rawMarkdownBody
-                                }
-                            </p>
-                            <p className={blogStyles.postDate}>
-                                <FontAwesomeIcon icon={faCalendar} />
-                                &nbsp;
-                                {node.publishedAt}
-                            </p>
-                        </div>
-                    </div>
-                ))}
+                {data.allContentfulBlogPost.edges.map(({ node }) =>
+                    getPost(node)
+                )}
             </div>
         </Layout>
     )

@@ -13,7 +13,7 @@ const IndexPage = () => {
         <Layout>
             <Head title="Home" />
             <div className={mainStyles.container}>
-                <h1>
+                <h1 className={indexStyles.typing}>
                     <Typist
                         avgTypingDelay={130}
                         stdTypingDelay={30}

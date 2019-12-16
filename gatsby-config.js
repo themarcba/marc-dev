@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path")
 /**
  * Configure your Gatsby site with this file.
  *
@@ -9,15 +9,22 @@ module.exports = {
     siteMetadata: {
         title: "Full-Stack Web Developer | Marc Backes",
         author: "Marc Backes",
-        version: '0.1.0'
+        version: "0.1.1",
     },
     plugins: [
+        {
+            resolve: "gatsby-plugin-fathom",
+            options: {
+                siteId: "DHVXVLZU",
+            },
+        },
+
         "gatsby-plugin-react-helmet",
         {
             resolve: "gatsby-source-contentful",
             options: {
                 spaceId: process.env.CONTENTFUL_SPACE_ID,
-                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
             },
         },
         "gatsby-plugin-sass",
