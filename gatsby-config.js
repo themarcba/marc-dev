@@ -9,7 +9,7 @@ module.exports = {
     siteMetadata: {
         title: "Full-Stack Web Developer | Marc Backes",
         author: "Marc Backes",
-        version: "0.1.1",
+        version: "0.1.2",
     },
     plugins: [
         {
