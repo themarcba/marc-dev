@@ -79,8 +79,9 @@ const XmasPage = props => {
                         </li>
                     </ul>
                 </p>
-                <p className={xmasStyles.endNote}>Merry Christmas</p>
             </div>
+            <p className={xmasStyles.endNote}>Merry Christmas</p>
+
         </Layout>
     )
 }
