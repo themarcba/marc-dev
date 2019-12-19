@@ -27,14 +27,24 @@ module.exports = {
                 accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
             },
         },
+        // {
+        //     resolve: `gatsby-plugin-google-fonts`,
+        //     options: {
+        //         fonts: [
+        //             `Mr De Haviland`,
+        //             `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
+        //         ],
+        //         display: "swap",
+        //     },
+        // },
         {
-            resolve: `gatsby-plugin-google-fonts`,
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
             options: {
                 fonts: [
-                    `Mr De Haviland`,
-                    `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
+                    {
+                        family: `Mr De Haviland`,
+                    },
                 ],
-                display: "swap",
             },
         },
 
