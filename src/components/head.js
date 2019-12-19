@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Head = ({ title, socialCardMeta, canonicalUrl }) => {
+const Head = ({ title, socialCardMeta, canonicalUrl }) => {    
     const data = useStaticQuery(graphql`
         query {
             site {

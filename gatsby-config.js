@@ -27,6 +27,17 @@ module.exports = {
                 accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
             },
         },
+        {
+            resolve: `gatsby-plugin-google-fonts`,
+            options: {
+                fonts: [
+                    `Mr De Haviland`,
+                    `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
+                ],
+                display: "swap",
+            },
+        },
+
         "gatsby-plugin-sass",
         "gatsby-transformer-sharp",
         "gatsby-plugin-sharp",
@@ -110,7 +121,7 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
-                path: path.join(__dirname, `static`, `images`),
+                path: path.join(__dirname, `static`),
             },
         },
     ],

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import moment from "moment"
 import Img from "gatsby-image"
 import blogStyle from "./blog.module.scss"
+import mainStyles from "../styles/main.module.scss"
 import Layout from "../components/layout"
 import Head from "../components/head"
 import { Link } from "gatsby"
@@ -36,7 +37,7 @@ export const query = graphql`
                 }
             }
         }
-        file(relativePath: { eq: "profile.jpg" }) {
+        file(relativePath: { eq: "images/profile.jpg" }) {
             childImageSharp {
                 fixed(width: 30) {
                     src
@@ -125,7 +126,7 @@ const Blog = props => {
             {coverImage}
 
             <div
-                className={blogStyle.md}
+                className={mainStyles.postContent}
                 dangerouslySetInnerHTML={{
                     __html:
                         props.data.contentfulBlogPost.md.childMarkdownRemark

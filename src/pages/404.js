@@ -7,7 +7,7 @@ import Head from '../components/head'
 const NotFound = () => {
     return (
         <Layout>
-            <Head title="404 - Page Not Found" />
+            <Head title="404 - Page Not Found"/>
             <div className={notFoundStyle.container}>
                 <h1>404</h1>
                 <h2>Page Not Found</h2>

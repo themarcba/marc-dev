@@ -2,8 +2,22 @@ import React from "react"
 import { Link } from "gatsby"
 import { Location } from "@reach/router"
 import headerStyles from "./header.module.scss"
+import { useStaticQuery, graphql } from "gatsby"
 
 const Header = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            allSitePage {
+                edges {
+                    node {
+                        path
+                    }
+                }
+            }
+        }
+    `)
+
+    const pages = data.allSitePage.edges.map(edge => edge.node.path.replace(/\/$/, ""))
     const location = (
         <Location>
             {({ navigate, location }) => {
@@ -14,10 +28,15 @@ const Header = () => {
                                 /blog
                             </span>
                         )
-                    } else {
+                    } else if(pages.includes(location.pathname.replace(/\/$/, ""))) {
+                        console.log('@@@@@',pages);
+                        console.log('@@@@@',location.pathname.replace(/\/$/, ""));
+                        
+                        pages.includes(location.pathname.replace(/\/$/, ""))
+
                         return (
                             <span className={headerStyles.titleAfter}>
-                                {location.pathname}
+                                {location.pathname.replace(/\/$/, "")}
                             </span>
                         )
                     }
