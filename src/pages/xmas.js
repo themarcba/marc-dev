@@ -12,7 +12,6 @@ export const query = graphql`
             childImageSharp {
                 fluid {
                     base64
-                    tracedSVG
                     aspectRatio
                     src
                     srcSet
