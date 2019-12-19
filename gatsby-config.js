@@ -42,7 +42,7 @@ module.exports = {
             options: {
                 fonts: [
                     {
-                        family: `Mr De Haviland`,
+                        family: `Parisienne`,
                     },
                 ],
             },
