@@ -17,7 +17,9 @@ const Header = () => {
         }
     `)
 
-    const pages = data.allSitePage.edges.map(edge => edge.node.path.replace(/\/$/, ""))
+    const pages = data.allSitePage.edges.map(edge =>
+        edge.node.path.replace(/\/$/, "")
+    )
     const location = (
         <Location>
             {({ navigate, location }) => {
@@ -28,7 +30,20 @@ const Header = () => {
                                 /blog
                             </span>
                         )
-                    } else if(pages.includes(location.pathname.replace(/\/$/, ""))) {                        
+                    } else if (
+                        location.pathname.replace(/\/$/, "") === "/xmas"
+                    ) {
+                        return (
+                            <span className={headerStyles.titleAfter}>
+                                /
+                                <span style={{ color: "rgba(0,0,0,1)" }}>
+                                    🎄
+                                </span>
+                            </span>
+                        )
+                    } else if (
+                        pages.includes(location.pathname.replace(/\/$/, ""))
+                    ) {
                         pages.includes(location.pathname.replace(/\/$/, ""))
 
                         return (
