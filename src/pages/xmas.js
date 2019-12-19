@@ -3,23 +3,35 @@ import Layout from "../components/layout"
 import xmasStyles from "./xmas.module.scss"
 import mainStyles from "../styles/main.module.scss"
 import Head from "../components/head"
-import { Img, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 export const query = graphql`
     query {
         fileName: file(relativePath: { eq: "images/xmas.jpeg" }) {
             childImageSharp {
                 fluid {
-                    sizes
+                    base64
+                    tracedSVG
+                    aspectRatio
                     src
                     srcSet
+                    srcWebp
+                    srcSetWebp
+                    sizes
+                    originalImg
+                    originalName
+                    presentationWidth
+                    presentationHeight
                 }
             }
         }
     }
 `
 
-const UsesPage = props => {
+const XmasPage = props => {    
+    console.log('@@@@@', props.data);
+    
     return (
         <Layout>
             <Head title="🎄Christmas Give-Away" noHeaderTitle="true" />
@@ -31,7 +43,8 @@ const UsesPage = props => {
                     who seeks to become a <strong>web developer</strong> and{" "}
                     <strong>cannot afford a computer</strong>.
                 </p>
-                <img src={props.data.fileName.childImageSharp.fluid.src} alt="" />
+
+                <p><Img fluid={props.data.fileName.childImageSharp.fluid} /></p>
 
                 <p>
                     <ul className={xmasStyles.list}>
@@ -73,4 +86,4 @@ const UsesPage = props => {
     )
 }
 
-export default UsesPage
+export default XmasPage

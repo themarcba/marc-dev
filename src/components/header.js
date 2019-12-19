@@ -28,10 +28,7 @@ const Header = () => {
                                 /blog
                             </span>
                         )
-                    } else if(pages.includes(location.pathname.replace(/\/$/, ""))) {
-                        console.log('@@@@@',pages);
-                        console.log('@@@@@',location.pathname.replace(/\/$/, ""));
-                        
+                    } else if(pages.includes(location.pathname.replace(/\/$/, ""))) {                        
                         pages.includes(location.pathname.replace(/\/$/, ""))
 
                         return (
