@@ -71,6 +71,10 @@ const UsesPage = () => {
                         <strong>VPN Client</strong> (for privacy/safety):{" "}
                         <a href="https://www.expressvpn.com/">ExpressVPN</a>
                     </li>
+                    <li>
+                        <strong>Todo App</strong>:{" "}
+                        <a href="https://any.do/">Any.do</a>
+                    </li>
                 </ul>
 
                 <h1>Hosting & Co.</h1>
