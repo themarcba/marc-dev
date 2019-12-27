@@ -31,17 +31,6 @@ const Header = () => {
                             </span>
                         )
                     } else if (
-                        location.pathname.replace(/\/$/, "") === "/xmas"
-                    ) {
-                        return (
-                            <span className={headerStyles.titleAfter}>
-                                /
-                                <span style={{ color: "rgba(0,0,0,1)" }}>
-                                    🎄
-                                </span>
-                            </span>
-                        )
-                    } else if (
                         pages.includes(location.pathname.replace(/\/$/, ""))
                     ) {
                         pages.includes(location.pathname.replace(/\/$/, ""))
