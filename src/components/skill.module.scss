@@ -11,6 +11,7 @@
         padding: 0;
         transform: translateY(0);
         z-index: 1;
+        border-radius: 8px;
         // display: none;
     }
     div {
@@ -35,7 +36,7 @@
     width: 100%;
     z-index: 0;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.7);
+    color: var(--textNormal);
     margin-top: 2rem;
 }
 
@@ -67,5 +68,5 @@
 
 .progressNumber {
     font-size: 0.8rem;
-    color: rgba(0,0,0,0.4)
+    color: var(--lightText);
 }

@@ -244,7 +244,8 @@ html {
 }
 
 body {
-    color: hsla(0, 0%, 0%, 0.8);
+    transition: all 0.3s linear;
+    color: var(--textNormal);
     font-family: sans-serif;
     font-weight: normal;
     word-wrap: break-word;
@@ -463,7 +464,7 @@ pre {
     margin-bottom: 1.45rem;
     font-size: 0.85rem;
     line-height: 1.42;
-    background: hsla(0, 0%, 0%, 0.04);
+    // background: var(--secondaryBg);
     border-radius: 3px;
     overflow: auto;
     word-wrap: normal;
@@ -682,7 +683,7 @@ td:last-child {
 
 tt,
 code {
-    background-color: hsla(0, 0%, 0%, 0.04);
+    // background-color: var(--secondaryBg);
     border-radius: 3px;
     font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
         "Liberation Mono", Menlo, Courier, monospace;
@@ -712,10 +713,11 @@ pre tt:after {
 }
 
 .language-text {
-    background-image: linear-gradient(to bottom, #eee 50%, #eee) !important;
-    color: rgba(0,0,0,0.5) !important;
+    background-image: linear-gradient(to bottom,  var(--secondaryBgHeavy) 50%,  var(--secondaryBgHeavy)) !important;
+    color: var(--textNormal) !important;
     text-shadow: none !important;
 }
+
 
 @media only screen and (max-width: 480px) {
     html {
@@ -724,13 +726,13 @@ pre tt:after {
 }
 
 @mixin link {
-    color: rgba(75, 0, 130, 1);
+    color: var(--textLink);
     font-weight: bold;
     text-decoration: none;
     border-bottom: solid 2px transparent;
     transition: border-bottom-color 0.3s ease-in-out;
     &:hover {
-        border-bottom-color: rgba(75, 0, 130, 1);
+        border-bottom-color: var(--textLink);
     }
     
 }
@@ -748,3 +750,30 @@ pre tt:after {
 :root{ 
   --custom-red: #e74c3c;
 }
+
+body {
+    --bg: #fff;
+    --secondaryBg: #fff;
+    --secondaryBgHeavy: #fff;
+    --textNormal: #222;
+    --lightText: rgba(0,0,0,0.2);
+    --lighterText: rgba(0,0,0,0.2);
+    --textLink: rgb(139, 139, 143);
+    --hr: hsla(0, 0%, 0%, 0.2);
+  
+    background-color: var(--bg);
+  }
+  
+  body.dark {
+    -webkit-font-smoothing: antialiased;
+  
+    --bg: rgb(21, 32, 43);
+    --secondaryBg: #243447;
+    --secondaryBgHeavy: #eee;
+    --textNormal: rgba(255, 255, 255, 0.88);
+    --lightText: rgba(255,255,255,0.5);
+    --lighterText: rgba(255,255,255,0.2);
+    --textLink: rgb(29, 161, 242);
+    --hr: hsla(0, 0%, 100%, 0.2);
+  }
+  

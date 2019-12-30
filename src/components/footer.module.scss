@@ -2,11 +2,11 @@
     margin-top: 3rem;
     font-size: 0.8rem;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.3);
+    color: var(--lightText);
     text-align: center;
 
     a {
-        color: rgba(0, 0, 0, 0.3);
+        color: var(--lightText);
         transition: color .3s ease-in-out;
 
         &:hover {
@@ -31,7 +31,7 @@
 }
 .small {
     font-size: 0.7rem;
-    color: rgba(0, 0, 0, 0.1);
+    color: var(--lighterText);
 }
 
 .heart {

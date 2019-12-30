@@ -3,6 +3,9 @@ import { Link } from "gatsby"
 import { Location } from "@reach/router"
 import headerStyles from "./header.module.scss"
 import { useStaticQuery, graphql } from "gatsby"
+import { ThemeToggler } from "gatsby-plugin-dark-mode"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
 
 const Header = () => {
     const data = useStaticQuery(graphql`
@@ -91,6 +94,40 @@ const Header = () => {
                     >
                         Contact
                     </Link>
+                </li>
+
+                <li>
+                    <ThemeToggler>
+                        {({ theme, toggleTheme }) => {
+                            const button =
+                                theme === "dark" ? (
+                                    <span>
+                                        <FontAwesomeIcon icon={faSun} />
+                                    </span>
+                                ) : (
+                                    <span>
+                                        <FontAwesomeIcon icon={faMoon} />
+                                    </span>
+                                )
+                            return (
+                                <label className={headerStyles.darkMode}>
+                                    <input
+                                        type="checkbox"
+                                        onChange={e =>
+                                            toggleTheme(
+                                                e.target.checked
+                                                    ? "dark"
+                                                    : "light"
+                                            )
+                                        }
+                                        checked={theme === "dark"}
+                                        className={headerStyles.darkModeInput}
+                                    />
+                                    {button}
+                                </label>
+                            )
+                        }}
+                    </ThemeToggler>
                 </li>
             </ul>
         </header>

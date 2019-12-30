@@ -12,6 +12,11 @@
     -webkit-box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.15);
+
+    @media screen and (max-width: 750px) {
+        margin: 4rem 0;
+    }
+
 }
 
 .intro {

@@ -252,7 +252,7 @@ const AboutPage = props => {
                     I have a big entrepreneurial and startup curiosity which is
                     devided in two fields. On one hand, small companies which
                     try to make it big such as{" "}
-                    <a href="https://avena.io">Avena</a> (Mexican-originated
+                    <a href="https://avena.io" className={mainStyle.link}>Avena</a> (Mexican-originated
                     fitness app). On the other hand, I like following strategic
                     moves and happenings in big players such as{" "}
                     <strong>Facebook, Netflix, Spotify</strong>.
