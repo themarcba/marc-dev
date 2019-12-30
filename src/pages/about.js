@@ -134,10 +134,11 @@ const AboutPage = props => {
                 </h1>
 
                 <div className={aboutStyle.skills}>
-                    <Skill name="JavaScript" file="javascript" progress={80} />
+                    <Skill name="JavaScript" file="javascript" progress={85} />
+                    <Skill name="MongoDB" file="mongodb" progress={75} />
+                    <Skill name="Express.js" file="expressjs" progress={60} />
                     <Skill name="Vue.js" file="vuejs" progress={80} />
                     <Skill name="Node.js" file="nodejs" progress={85} />
-                    <Skill name="MongoDB" file="mongodb" progress={75} />
                     <Skill name="Gatsby.js" file="gatsbyjs" progress={50} />
                     <Skill name="PHP" file="php" progress={85} />
                     <Skill name="jQuery" file="jquery" progress={85} />
