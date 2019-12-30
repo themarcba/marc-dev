@@ -206,3 +206,17 @@
         }
     }
 }
+
+.table {
+    tr {
+        &:last-child {
+            td {
+                border: 0;
+            }
+        }
+    }
+
+    td {
+        border-color: #efefef;
+    }
+}

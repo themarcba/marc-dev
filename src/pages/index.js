@@ -8,16 +8,35 @@ import Typist from "react-typist"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
 
-const IndexPage = () => {
+export const query = graphql`
+    query {
+        file(relativePath: { eq: "images/profile.jpg" }) {
+            childImageSharp {
+                fixed(width: 50) {
+                    src
+                }
+            }
+        }
+    }
+`
+
+const IndexPage = props => {
+    const profilePicture = (
+        <Link to="/about">
+            <img
+                src={props.data.file.childImageSharp.fixed.src}
+                alt="Marc Backes"
+                className={indexStyles.profilePicture}
+            />
+        </Link>
+    )
+
     return (
         <Layout>
             <Head title="Home" />
             <div className={mainStyles.container}>
                 <h1 className={indexStyles.typing}>
-                    <Typist
-                        avgTypingDelay={130}
-                        stdTypingDelay={30}
-                    >
+                    <Typist avgTypingDelay={130} stdTypingDelay={30}>
                         <span>Hello!</span>
                         <Typist.Backspace count={6} delay={3000} />
                         <span>Ahoy!</span>
@@ -35,7 +54,7 @@ const IndexPage = () => {
                 </h1>
 
                 <h2>
-                    I'm Marc and
+                    I'm Marc {profilePicture} and
                     <br />
                     I&nbsp;
                     <FontAwesomeIcon
@@ -61,7 +80,11 @@ const IndexPage = () => {
                     <Link to="/contact" className={mainStyles.link}>
                         contact
                     </Link>{" "}
-                    me.
+                    or{" "}
+                    <Link to="/about" className={mainStyles.link}>
+                        get to know me a little better
+                    </Link>
+                    .
                 </p>
             </div>
         </Layout>

@@ -1,0 +1,99 @@
+@import "../styles/main.module.scss";
+
+@mixin dot {
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: transparent;
+    margin-left: -2rem;
+    top: calc(50% - 0.6rem);
+    color: transparent;
+    // border: solid 2px red;
+    border-radius: 50%;
+    $border: 2px;
+    color: #fff;
+    background: #fff;
+    background-clip: padding-box;
+    border: solid $border transparent;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        margin: -$border;
+        border-radius: inherit;
+        background: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(#e48a28),
+            color-stop(50%, #cc4856),
+            to(#6e3a6c)
+        );
+        background: linear-gradient(
+            315deg,
+            #e48a28 0%,
+            #cc4856 50%,
+            #6e3a6c 100%
+        );
+    }
+}
+
+.job {
+    margin-left: 2.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.dot {
+    @include dot();
+}
+
+.dot-current {
+    @include dot();
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+        box-shadow: 0 0 0 0 rgba(204,72,86, 0.7);
+	}
+
+	70% {
+        box-shadow: 0 0 0 10px rgba(204,72,86, 0);
+	}
+
+	100% {
+        box-shadow: 0 0 0 0 rgba(204,72,86, 0);
+	}
+}
+
+
+.info {
+    font-size: 0.8rem;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.location {
+    margin-left: 1rem;
+}
+.title {
+    transition: opacity 0.3s ease-in-out;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: rgba(0, 0, 0, 0.7);
+}
+.details {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+}

@@ -1,0 +1,51 @@
+.about {
+    h1 {
+        margin-bottom: 3rem;
+    }
+}
+
+.profilePicture {
+    position: relative;
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 2rem;
+    -webkit-box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.15);
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 750px) {
+        flex-direction: column;
+    }
+}
+
+.introText {
+    flex: 1;
+}
+.gradientLine {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#e48a28),
+        color-stop(50%, #cc4856),
+        to(#6e3a6c)
+    );
+    background: linear-gradient(
+        to right,
+        #e48a28 0%,
+        #cc4856 50%,
+        #6e3a6c 100%
+    );
+    height: 1px;
+    margin: 4rem 0;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

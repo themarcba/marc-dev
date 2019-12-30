@@ -25,7 +25,7 @@ const Footer = () => {
                     className={footerStyles.heart}
                 />{" "}
                 by {data.site.siteMetadata.author} &copy;{" "}
-                {new Date().getFullYear()}, made with
+                {new Date().getFullYear()}, built with
                 <a href="https://www.gatsbyjs.org" alt="GatsbyJS">
                     <img
                         src="/images/gatsby-monogram.svg"

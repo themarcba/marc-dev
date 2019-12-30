@@ -60,6 +60,18 @@ const ContactPage = () => {
                     <FontAwesomeIcon icon={faLinkedin} />
                 </a>
             </div>
+
+            <h1>Additional information</h1>
+            <table className={mainStyle.table}>
+                <tr>
+                    <td><strong>EU VAT ID</strong></td>
+                    <td>LU29433916</td>
+                </tr>
+                <tr>
+                    <td><strong>Luxembourgish Trade Registry</strong></td>
+                    <td>A41129</td>
+                </tr>
+            </table>
         </Layout>
     )
 }
