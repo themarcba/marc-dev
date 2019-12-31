@@ -1,5 +1,5 @@
 require("dotenv").config({
-    path: `.env`
+    path: `.env`,
 })
 
 const path = require("path")
@@ -15,9 +15,17 @@ module.exports = {
             "Full-Stack Web Developer | Marc Backes | JavaScript, Node.js, Vue.js",
         author: "Marc Backes",
         version: "0.1.5",
-        hostname: process.env.HOSTNAME
+        hostname: process.env.HOSTNAME,
     },
     plugins: [
+        {
+            resolve: "gatsby-plugin-page-progress",
+            options: {
+                excludePaths: ['/'],        
+                height: 3,
+            },
+        },
+
         {
             resolve: "gatsby-plugin-fathom",
             options: {
@@ -47,6 +55,7 @@ module.exports = {
         "gatsby-plugin-sass",
         "gatsby-transformer-sharp",
         "gatsby-plugin-sharp",
+
         {
             resolve: "gatsby-transformer-remark",
             options: {

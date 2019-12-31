@@ -775,3 +775,8 @@ body.dark {
     --lighterText: rgba(255, 255, 255, 0.2);
     --textLink: rgb(29, 161, 242);
 }
+
+#gatsby-plugin-page-progress {
+    background: -webkit-gradient(linear, left top, right top, from(#e48a28), color-stop(50%, #cc4856), to(#6e3a6c));
+    background: linear-gradient(to right, #e48a28 0%, #cc4856 50%, #6e3a6c 100%);
+}
