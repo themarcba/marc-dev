@@ -27,7 +27,7 @@ const Head = ({ title, socialCardMeta, canonicalUrl, path }) => {
             {
                 name: "twitter:description",
                 content:
-                    "Marc is a Full-Stack Web Developer based in Luxembourg",
+                    "Marc is a Full-Stack Web Developer based in Luxembourg 👨‍💻",
             },
             {
                 name: "twitter:image",

@@ -594,13 +594,13 @@ ul li {
     padding-left: 0;
 }
 
-li>ol {
+li > ol {
     margin-left: 1.45rem;
     margin-bottom: calc(1.45rem / 2);
     margin-top: calc(1.45rem / 2);
 }
 
-li>ul {
+li > ul {
     margin-left: 1.45rem;
     margin-bottom: calc(1.45rem / 2);
     margin-top: calc(1.45rem / 2);
@@ -618,7 +618,7 @@ p *:last-child {
     margin-bottom: 0;
 }
 
-li>p {
+li > p {
     margin-bottom: calc(1.45rem / 2);
 }
 
@@ -713,11 +713,14 @@ pre tt:after {
 }
 
 .language-text {
-    background-image: linear-gradient(to bottom,  var(--secondaryBg) 50%,  var(--secondaryBg)) !important;
+    background-image: linear-gradient(
+        to bottom,
+        var(--secondaryBg) 50%,
+        var(--secondaryBg)
+    ) !important;
     color: var(--textNormal) !important;
     text-shadow: none !important;
 }
-
 
 @media only screen and (max-width: 480px) {
     html {
@@ -734,7 +737,6 @@ pre tt:after {
     &:hover {
         border-bottom-color: var(--textLink);
     }
-    
 }
 
 .svg-inline--fa {
@@ -747,8 +749,8 @@ pre tt:after {
     opacity: 0.25;
 }
 
-:root{ 
-  --custom-red: #e74c3c;
+:root {
+    --custom-red: #e74c3c;
 }
 
 body {
@@ -756,23 +758,20 @@ body {
     --secondaryBg: #fff;
     --secondaryBgHeavy: #fff;
     --textNormal: #222;
-    --lightText: rgba(0,0,0,0.45);
-    --lighterText: rgba(0,0,0,0.2);
+    --lightText: rgba(0, 0, 0, 0.45);
+    --lighterText: rgba(0, 0, 0, 0.2);
     --textLink: rgb(139, 139, 143);
-    --hr: hsla(0, 0%, 0%, 0.2);
-  
     background-color: var(--bg);
-  }
-  
-  body.dark {
+}
+
+body.dark {
     -webkit-font-smoothing: antialiased;
-  
+
     --bg: rgb(21, 32, 43);
     --secondaryBg: #243447;
     --secondaryBgHeavy: #eee;
     --textNormal: rgba(255, 255, 255, 0.88);
-    --lightText: rgba(255,255,255,0.5);
-    --lighterText: rgba(255,255,255,0.2);
+    --lightText: rgba(255, 255, 255, 0.5);
+    --lighterText: rgba(255, 255, 255, 0.2);
     --textLink: rgb(29, 161, 242);
-    --hr: hsla(0, 0%, 100%, 0.2);
-  }
+}
