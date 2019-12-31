@@ -76,8 +76,12 @@
 }
 
 .darkMode {
-    // color: var(--lightText);
-    color: #f1c40f;
+    color: var(--lightText);
+    cursor: pointer
+}
+
+.lightMode {
+    color: #fce683;
     cursor: pointer
 }
 

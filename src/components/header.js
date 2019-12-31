@@ -115,7 +115,7 @@ const Header = () => {
                                     </span>
                                 )
                             return (
-                                <label className={headerStyles.darkMode}>
+                                <label className={headerStyles[`${theme}Mode`]}>
                                     <input
                                         type="checkbox"
                                         onChange={e =>
