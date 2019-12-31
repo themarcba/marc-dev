@@ -229,3 +229,18 @@
         border-color: #efefef;
     }
 }
+
+.button {
+    display: inline-block;
+    border: solid 2px var(--textLink);
+    color: var(--textLink);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+        background: var(--textLink);
+        color: #fff;
+    }
+}

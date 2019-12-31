@@ -9,7 +9,11 @@ import blogStyles from "./blog.module.scss"
 import Typist from "react-typist"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHeart, faPenFancy } from "@fortawesome/free-solid-svg-icons"
+import {
+    faHeart,
+    faPenFancy,
+    faChevronRight,
+} from "@fortawesome/free-solid-svg-icons"
 
 export const query = graphql`
     query {
@@ -23,7 +27,7 @@ export const query = graphql`
         allContentfulBlogPost(
             sort: { fields: publishedAt, order: DESC }
             filter: { hideFromList: { ne: true } }
-            limit: 3
+            limit: 2
         ) {
             edges {
                 node {
@@ -61,8 +65,10 @@ const getPost = node => {
                 </div>
                 {getCoverImage(node)}
             </Link>
-            <div className={blogStyles.postContent} style={{padding: 0}}>
-            </div>
+            <div
+                className={blogStyles.postContent}
+                style={{ padding: 0 }}
+            ></div>
         </div>
     )
 }
@@ -133,12 +139,19 @@ const IndexPage = props => {
                     .
                 </p>
 
-                <h2 style={{marginTop: '3rem'}}>Latest blog posts <FontAwesomeIcon icon={faPenFancy} /></h2>
+                <h2 style={{ marginTop: "3rem" }}>
+                    Latest blog posts <FontAwesomeIcon icon={faPenFancy} />
+                </h2>
 
                 <div className={indexStyles.posts}>
                     {props.data.allContentfulBlogPost.edges.map(({ node }) =>
                         getPost(node)
                     )}
+                    <div className={indexStyles.morePosts}>
+                        <Link to="/blog" className={mainStyles.button}>
+                            More posts <FontAwesomeIcon icon={faChevronRight} />
+                        </Link>
+                    </div>
                 </div>
             </div>
         </Layout>
