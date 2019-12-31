@@ -91,6 +91,7 @@
 }
 
 // Night Sky
+// Code from https://codepen.io/amiangie/pen/RRdQAb
 @function box-shadow($stars) {
 	$bxshadow: ();
 	@for $i from 1 to $stars {
@@ -112,7 +113,12 @@ $bxshadow-small: box-shadow(800);
     z-index: -1;
     overflow: hidden;
     -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
-    from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    from(rgba(0,0,0,0.5)), to(rgba(0,0,0,0)));
+
+    // Remove night sky on mobile (looks weird!)
+    @media screen and (max-width: 750px) {
+        display: none;
+    } 
 }
 
 .smallStars {
