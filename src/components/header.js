@@ -20,6 +20,7 @@ const Header = () => {
         }
     `)
 
+    const hostname = window.location.hostname === 'localhost' ? 'marc.dev' : window.location.hostname
     const pages = data.allSitePage.edges.map(edge =>
         edge.node.path.replace(/\/$/, "")
     )
@@ -58,7 +59,7 @@ const Header = () => {
             </div>
             <h1>
                 <Link className={headerStyles.title} to="/">
-                    marc.dev
+                    {hostname}
                 </Link>
                 {location}
             </h1>
