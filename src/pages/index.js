@@ -105,7 +105,7 @@ const IndexPage = props => {
                     </Typist>
                 </h1>
 
-                <h2>
+                <h2 className={indexStyles.title}>
                     I'm Marc {profilePicture} and
                     <br />
                     I&nbsp;
@@ -139,9 +139,9 @@ const IndexPage = props => {
                     .
                 </p>
 
-                <h2 style={{ marginTop: "3rem" }}>
+                <h3 className={indexStyles.title}>
                     Latest blog posts <FontAwesomeIcon icon={faPenFancy} />
-                </h2>
+                </h3>
 
                 <div className={indexStyles.posts}>
                     {props.data.allContentfulBlogPost.edges.map(({ node }) =>
