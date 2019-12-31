@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import moment from "moment"
+import pluralize from "pluralize"
 import Img from "gatsby-image"
 import blogStyle from "./blog.module.scss"
 import mainStyles from "../styles/main.module.scss"
@@ -18,6 +19,7 @@ export const query = graphql`
             md {
                 childMarkdownRemark {
                     html
+                    timeToRead
                 }
             }
             coverImage {
@@ -111,8 +113,17 @@ const Blog = props => {
             </h1>
 
             <p className={blogStyle.postInfo}>
-                {moment(props.data.contentfulBlogPost.publishedAt).format('MMMM Do, YYYY')}
+                {moment(props.data.contentfulBlogPost.publishedAt).format(
+                    "MMMM Do, YYYY"
+                )}
                 &nbsp;&middot;&nbsp;
+                {pluralize(
+                    "minutes",
+                    props.data.contentfulBlogPost.md.childMarkdownRemark
+                        .timeToRead,
+                    true
+                )}{" "}
+                read &nbsp;&middot;&nbsp;
                 <span>by Marc Backes</span>
                 <Link to="/about">
                     <img

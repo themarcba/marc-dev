@@ -51,6 +51,11 @@ const Header = () => {
 
     return (
         <header className={headerStyles.header}>
+            <div className={headerStyles.starArea}>
+                <div className={headerStyles.smallStars}></div>
+                <div className={headerStyles.mediumStars}></div>
+                <div className={headerStyles.largeStars}></div>
+            </div>
             <h1>
                 <Link className={headerStyles.title} to="/">
                     marc.dev

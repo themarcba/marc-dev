@@ -76,11 +76,116 @@
 }
 
 .darkMode {
-    color: var(--lightText);
-    cursor: pointer;
+    // color: var(--lightText);
+    color: #f1c40f;
+    cursor: pointer
 }
 
 .darkModeInput {
     opacity: 0;
     position: absolute;
+}
+
+// Night Sky
+@function box-shadow($stars) {
+	$bxshadow: ();
+	@for $i from 1 to $stars {
+		$bxshadow: append($bxshadow, (random(2000) + 0px) (random(2000) + 0px) #fff, comma);
+	}
+	@return unquote($bxshadow);
+}
+
+$bxshadow-large: box-shadow(300);
+$bxshadow-medium: box-shadow(500);
+$bxshadow-small: box-shadow(800);
+
+.starArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 33vh;
+    z-index: -1;
+    overflow: hidden;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
+    from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+
+.smallStars {
+	height: 2px;
+	width: 2px;
+	background: transparent;
+	box-shadow: $bxshadow-medium;
+	animation: blink-medium 5s infinite;
+
+}
+
+.mediumStars {
+	height: 2px;
+	width: 2px;
+	background: transparent;
+	box-shadow: $bxshadow-medium;
+	animation: blink-medium 5s infinite;
+
+}
+
+.largeStars {
+	height: 3px;
+	width: 3px;
+	background: transparent;
+	box-shadow: $bxshadow-large;
+	animation: blink-large 7s infinite;
+
+}
+
+@keyframes blink-large {
+	0% {
+		box-shadow: $bxshadow-large;
+	}	
+	70% {
+		$colors: '#fff', 'transparent';
+		$stars: $bxshadow-large;
+		@for $i from 1 to length($stars) {
+			$star: set-nth(nth($stars, $i), 3, unquote(nth($colors, random(length($colors)))));
+			$stars: set-nth($stars, $i, $star);
+		}
+		box-shadow: $stars;
+	}
+	100% {
+		box-shadow: $bxshadow-large;
+	}
+}
+@keyframes blink-medium {
+	0% {
+		box-shadow: $bxshadow-medium;
+	}	
+	70% {
+		$colors: '#fff', 'transparent';
+		$stars: $bxshadow-medium;
+		@for $i from 1 to length($stars) {
+			$star: set-nth(nth($stars, $i), 3, unquote(nth($colors, random(length($colors)))));
+			$stars: set-nth($stars, $i, $star);
+		}
+		box-shadow: $stars;
+	}
+	100% {
+		box-shadow: $bxshadow-medium;
+	}
+}
+@keyframes blink-small {
+	0% {
+		box-shadow: $bxshadow-small;
+	}	
+	70% {
+		$colors: '#fff', 'transparent';
+		$stars: $bxshadow-small;
+		@for $i from 1 to length($stars) {
+			$star: set-nth(nth($stars, $i), 3, unquote(nth($colors, random(length($colors)))));
+			$stars: set-nth($stars, $i, $star);
+		}
+		box-shadow: $stars;
+	}
+	100% {
+		box-shadow: $bxshadow-small;
+	}
 }
