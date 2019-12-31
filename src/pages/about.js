@@ -140,6 +140,7 @@ const AboutPage = props => {
                     <Skill name="Vue.js" file="vuejs" progress={80} />
                     <Skill name="Node.js" file="nodejs" progress={85} />
                     <Skill name="Gatsby.js" file="gatsbyjs" progress={50} />
+                    <Skill name="Ruby on Rails" file="rails" progress={80} />
                     <Skill name="PHP" file="php" progress={85} />
                     <Skill name="jQuery" file="jquery" progress={85} />
                     <Skill name="MySQL" file="mysql" progress={90} />

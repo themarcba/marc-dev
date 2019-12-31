@@ -713,7 +713,7 @@ pre tt:after {
 }
 
 .language-text {
-    background-image: linear-gradient(to bottom,  var(--secondaryBgHeavy) 50%,  var(--secondaryBgHeavy)) !important;
+    background-image: linear-gradient(to bottom,  var(--secondaryBg) 50%,  var(--secondaryBg)) !important;
     color: var(--textNormal) !important;
     text-shadow: none !important;
 }
