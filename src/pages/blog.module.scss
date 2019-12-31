@@ -12,6 +12,26 @@
     height: 200px;
     object-fit: cover;
 }
+
+.cover-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    z-index: 1;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+
+}
+
 .post-link {
     text-decoration: none;
     position: relative;
@@ -57,7 +77,6 @@
     overflow: hidden;
     margin-top: 0;
     transition: max-height 0.5s ease-in-out, margin-top 0.5s ease-in-out;
-    // transition-delay: 0.3s;
 }
 
 .post {

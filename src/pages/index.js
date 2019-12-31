@@ -1,12 +1,15 @@
 import React from "react"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import Head from "../components/head"
-import { Link } from "gatsby"
 import indexStyles from "./index.module.scss"
 import mainStyles from "../styles/main.module.scss"
+import blogStyles from "./blog.module.scss"
 import Typist from "react-typist"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHeart } from "@fortawesome/free-solid-svg-icons"
+import { faHeart, faPenFancy } from "@fortawesome/free-solid-svg-icons"
 
 export const query = graphql`
     query {
@@ -17,9 +20,52 @@ export const query = graphql`
                 }
             }
         }
+        allContentfulBlogPost(
+            sort: { fields: publishedAt, order: DESC }
+            filter: { hideFromList: { ne: true } }
+            limit: 3
+        ) {
+            edges {
+                node {
+                    title
+                    hideFromList
+                    slug
+                    publishedAt
+                    coverImage {
+                        title
+                        fluid {
+                            sizes
+                            src
+                            srcSet
+                        }
+                    }
+                }
+            }
+        }
     }
 `
 
+const getCoverImage = node =>
+    node.coverImage ? (
+        <Img className={blogStyles.coverImage} fluid={node.coverImage.fluid} />
+    ) : (
+        ""
+    )
+
+const getPost = node => {
+    return (
+        <div className={blogStyles.post}>
+            <Link to={`/blog/${node.slug}`} className={blogStyles.postLink}>
+                <div className={blogStyles.coverText}>
+                    <span>{node.title}</span>
+                </div>
+                {getCoverImage(node)}
+            </Link>
+            <div className={blogStyles.postContent} style={{padding: 0}}>
+            </div>
+        </div>
+    )
+}
 const IndexPage = props => {
     const profilePicture = (
         <Link to="/about">
@@ -86,6 +132,14 @@ const IndexPage = props => {
                     </Link>
                     .
                 </p>
+
+                <h2 style={{marginTop: '3rem'}}>Latest blog posts <FontAwesomeIcon icon={faPenFancy} /></h2>
+
+                <div className={indexStyles.posts}>
+                    {props.data.allContentfulBlogPost.edges.map(({ node }) =>
+                        getPost(node)
+                    )}
+                </div>
             </div>
         </Layout>
     )
