@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCalendar, faClock } from "@fortawesome/free-regular-svg-icons"
 import camelCase from "camelcase"
 
-const BlogPage = () => {
+const BlogPage = (props) => {
     const data = useStaticQuery(graphql`
         query {
             allContentfulBlogPost(
@@ -110,7 +110,7 @@ const BlogPage = () => {
     }
     return (
         <Layout>
-            <Head title="Blog" />
+            <Head title="Blog"  path={props.path} />
             <div className={blogStyles.posts}>
                 {data.allContentfulBlogPost.edges.map(({ node }) =>
                     getPost(node)

@@ -4,10 +4,10 @@ import { Link } from "gatsby"
 import notFoundStyle from './404.module.scss'
 import Head from '../components/head'
 
-const NotFound = () => {
+const NotFound = (props) => {
     return (
         <Layout>
-            <Head title="404 - Page Not Found"/>
+            <Head title="404 - Page Not Found" path={props.path} />
             <div className={notFoundStyle.container}>
                 <h1>404</h1>
                 <h2>Page Not Found</h2>

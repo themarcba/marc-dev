@@ -32,7 +32,7 @@ export const query = graphql`
     }
 `
 
-const AboutPage = props => {
+const AboutPage = props => {    
     const profilePicture = (
         <img
             src={props.data.file.childImageSharp.fixed.src}
@@ -43,7 +43,7 @@ const AboutPage = props => {
 
     return (
         <Layout>
-            <Head title="About" />
+            <Head title="About" path={props.path} />
             <div className={aboutStyle.about}>
                 <div className={aboutStyle.intro}>
                     <div>

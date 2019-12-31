@@ -3,10 +3,10 @@ import Layout from "../components/layout"
 import mainStyles from "../styles/main.module.scss"
 import Head from "../components/head"
 
-const UsesPage = () => {
+const UsesPage = props => {
     return (
         <Layout>
-            <Head title="Uses" />
+            <Head title="Uses" path={props.path} />
             <div className={mainStyles.postContent}>
                 <p>
                     Sometimes, people ask me what IDE, theme, font, etc I use.

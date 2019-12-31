@@ -1,7 +1,7 @@
 {
     "name": "marc-dev-gatsby",
     "private": true,
-    "description": "marc.dev Website and Blog",
+    "description": "Website and Blog",
     "version": "0.1.0",
     "license": "MIT",
     "scripts": {

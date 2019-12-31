@@ -10,6 +10,14 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
 const Header = () => {
     const data = useStaticQuery(graphql`
         query {
+            site {
+                siteMetadata {
+                    author
+                    version
+                    hostname
+                }
+            }
+
             allSitePage {
                 edges {
                     node {
@@ -19,6 +27,7 @@ const Header = () => {
             }
         }
     `)
+    const metadata = data.site.siteMetadata
 
     const pages = data.allSitePage.edges.map(edge =>
         edge.node.path.replace(/\/$/, "")
@@ -58,7 +67,7 @@ const Header = () => {
             </div>
             <h1>
                 <Link className={headerStyles.title} to="/">
-                    marc.dev
+                    {metadata.hostname}
                 </Link>
                 {location}
             </h1>

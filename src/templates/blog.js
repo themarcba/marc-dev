@@ -100,11 +100,13 @@ const Blog = props => {
         ]
     }
 
+    const canonicalUrl = props.data.contentfulBlogPost.canonicalUrl || `https://marc.dev/blog/${props.data.contentfulBlogPost.slug}`
+    
     return (
         <Layout>
             <Head
                 title={props.data.contentfulBlogPost.title}
-                canonicalUrl={props.data.contentfulBlogPost.canonicalUrl}
+                canonicalUrl={canonicalUrl}
                 socialCardMeta={socialCardMeta}
             />
 

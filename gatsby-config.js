@@ -1,3 +1,7 @@
+require("dotenv").config({
+    path: `.env`
+})
+
 const path = require("path")
 /**
  * Configure your Gatsby site with this file.
@@ -7,9 +11,11 @@ const path = require("path")
 
 module.exports = {
     siteMetadata: {
-        title: "Full-Stack Web Developer | Marc Backes | JavaScript, Node.js, Vue.js",
+        title:
+            "Full-Stack Web Developer | Marc Backes | JavaScript, Node.js, Vue.js",
         author: "Marc Backes",
         version: "0.1.4",
+        hostname: process.env.HOSTNAME
     },
     plugins: [
         {
@@ -18,7 +24,7 @@ module.exports = {
                 siteId: "DHVXVLZU",
             },
         },
-        'gatsby-plugin-dark-mode',
+        "gatsby-plugin-dark-mode",
         "gatsby-plugin-react-helmet",
         {
             resolve: "gatsby-source-contentful",

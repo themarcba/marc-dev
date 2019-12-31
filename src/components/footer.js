@@ -11,10 +11,12 @@ const Footer = () => {
                 siteMetadata {
                     author
                     version
+                    hostname
                 }
             }
         }
     `)
+    const metadata = data.site.siteMetadata
 
     return (
         <footer className={footerStyles.footer}>
@@ -24,8 +26,8 @@ const Footer = () => {
                     icon={faHeart}
                     className={footerStyles.heart}
                 />{" "}
-                by {data.site.siteMetadata.author} &copy;{" "}
-                {new Date().getFullYear()}, built with
+                by {metadata.author} &copy; {new Date().getFullYear()}, built
+                with
                 <a href="https://www.gatsbyjs.org" alt="GatsbyJS">
                     <img
                         src="/images/gatsby-monogram.svg"
@@ -35,7 +37,7 @@ const Footer = () => {
                 </a>
             </p>
             <p className={footerStyles.small}>
-                marc.dev v.{data.site.siteMetadata.version}
+                {metadata.hostname} v.{metadata.version}
             </p>
         </footer>
     )

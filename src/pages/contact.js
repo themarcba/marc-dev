@@ -12,10 +12,10 @@ import {
     faLinkedin,
 } from "@fortawesome/free-brands-svg-icons"
 
-const ContactPage = () => {
+const ContactPage = (props) => {
     return (
         <Layout>
-            <Head title="Contact" />
+            <Head title="Contact"  path={props.path} />
 
             <p>
                 My preferred way of contact is via&nbsp;
