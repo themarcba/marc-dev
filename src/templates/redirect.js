@@ -3,12 +3,18 @@ import mainStyles from "../styles/main.module.scss"
 
 class Redirect extends React.Component {
     componentDidMount() {
-        window.location = this.props.pageContext.url
+        const timeout = this.props.pageContext.timeout || 1000
+        setTimeout(() => {
+            window.location = this.props.pageContext.url
+        }, timeout);
     }
     render() {
+        console.log('@@@@',this.props.pageContext);
+        
+        const text = this.props.pageContext.text || "You are being redirected..."
         return (
             <div className={mainStyles.center}>
-                <h1>You are being redirected...</h1>
+                <h1>{text}</h1>
             </div>
         )
     }

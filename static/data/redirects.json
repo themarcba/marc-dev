@@ -1,8 +1,26 @@
 [
-    { "path": "/github", "redirectTo": "https://github.com/themarcba" },
-    { "path": "/twitter", "redirectTo": "https://twitter.com/_marcba" },
-    { "path": "/dev", "redirectTo": "https://dev.to/_marcba" },
-    { "path": "/linkedin", "redirectTo": "https://www.linkedin.com/in/themarcba" },
-    { "path": "/paypal", "redirectTo": "https://www.paypal.me/themarcba" },
-    { "path": "/btc", "redirectTo": "https://gist.github.com/themarcba/1b96e17f696ab6062bd4b2675c9f9b9f" }
+    { "path": "/github", "url": "https://github.com/themarcba" },
+    { "path": "/twitter", "url": "https://twitter.com/_marcba" },
+    { "path": "/dev", "url": "https://dev.to/_marcba" },
+    { "path": "/paypal", "url": "https://www.paypal.me/themarcba" },
+    {
+        "path": "/linkedin",
+        "url": "https://www.linkedin.com/in/themarcba"
+    },
+    {
+        "path": "/btc",
+        "url": "https://gist.github.com/themarcba/1b96e17f696ab6062bd4b2675c9f9b9f"
+    },
+    {
+        "path": "/wp-admin",
+        "url": "https://media.giphy.com/media/kFgzrTt798d2w/source.gif",
+        "text": "Nice try...",
+        "timeout": 5000
+    }
+    {
+        "path": "/phpmyadmin",
+        "url": "https://media.giphy.com/media/kFgzrTt798d2w/source.gif",
+        "text": "Nice try...",
+        "timeout": 5000
+    }
 ]

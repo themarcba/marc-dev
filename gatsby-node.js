@@ -1,7 +1,7 @@
 const path = require("path")
 
 module.exports.createPages = async ({ graphql, actions }) => {
-    const { createPage, createRedirect } = actions
+    const { createPage } = actions
     const blogTemplate = path.resolve("./src/templates/blog.js")
     const redirectTemplate = path.resolve("./src/templates/redirect.js")
 
@@ -21,12 +21,17 @@ module.exports.createPages = async ({ graphql, actions }) => {
                 edges {
                     node {
                         path
-                        redirectTo
+                        url
+                        text
+                        timeout
                     }
                 }
             }
+        
         }
     `)
+
+
 
     // Create pages for blog posts
     res.data.allContentfulBlogPost.edges.forEach(({ node }) => {
@@ -46,6 +51,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
             path: `${node.path}`,
             context: {
                 url: node.redirectTo,
+                text: node.text,
+                timeout: node.timeout
             },
         })
     })
