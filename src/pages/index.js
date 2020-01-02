@@ -49,12 +49,14 @@ export const query = graphql`
     }
 `
 
-const getCoverImage = node =>
-    node.coverImage ? (
+const getCoverImage = node =>{
+console.log('@@@', node.coverImage.fluid);
+
+    return node.coverImage ? (
         <Img className={blogStyles.coverImage} fluid={node.coverImage.fluid} />
     ) : (
         ""
-    )
+    )}
 
 const getPost = node => {
     return (

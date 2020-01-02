@@ -65,11 +65,11 @@ const ContactPage = (props) => {
             <table className={mainStyle.table}>
                 <tr>
                     <td><strong>EU VAT ID</strong></td>
-                    <td>LU29433916</td>
+                    <td className={mainStyle.monospace}>LU29433916</td>
                 </tr>
                 <tr>
                     <td><strong>Luxembourgish Trade Registry</strong></td>
-                    <td>A41129</td>
+                    <td className={mainStyle.monospace}>A41129</td>
                 </tr>
             </table>
         </Layout>
