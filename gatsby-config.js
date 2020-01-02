@@ -18,6 +18,15 @@ module.exports = {
         hostname: process.env.HOSTNAME,
     },
     plugins: [
+        // For adding lang= attribute to <html> tag
+        {
+            resolve: "gatsby-plugin-html-attributes",
+            options: {
+                lang: "en",
+            },
+        },
+
+        // For adding the scroll progress bar on top of the website
         {
             resolve: "gatsby-plugin-page-progress",
             options: {
@@ -26,19 +35,29 @@ module.exports = {
             },
         },
 
+        // Analytics with usefathom.com
         {
             resolve: "gatsby-plugin-fathom",
             options: {
                 siteId: "DHVXVLZU",
             },
         },
+
+        // Preconnect to some domains. Necessary for speed optimization.
         {
             resolve: "gatsby-plugin-preconnect",
             options: {
-                domains: ["https://collect.usefathom.com"],
+                domains: [
+                    "https://collect.usefathom.com",
+                    "https://images.ctfassets.net",
+                ],
             },
         },
+
+        // Dark mode button
         "gatsby-plugin-dark-mode",
+
+        // For setting meta tags in the site
         "gatsby-plugin-react-helmet",
         {
             resolve: "gatsby-source-contentful",
@@ -47,6 +66,8 @@ module.exports = {
                 accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
             },
         },
+
+        // For loading external Google Fonts
         {
             resolve: `gatsby-plugin-prefetch-google-fonts`,
             options: {
@@ -58,14 +79,30 @@ module.exports = {
             },
         },
 
+        // For using SASS
         "gatsby-plugin-sass",
+
+        // For image transformation (e.g. resize)
         "gatsby-transformer-sharp",
+        // For image transformation (e.g. resize)
         "gatsby-plugin-sharp",
 
+        // For loading files from the file system into GraphQL
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: path.join(__dirname, `static`),
+            },
+        },
+
+        // Markdown plugins
         {
             resolve: "gatsby-transformer-remark",
             options: {
                 plugins: [
+
+                    // Images in markdown
                     "gatsby-remark-relative-images",
                     {
                         resolve: "gatsby-remark-images",
@@ -74,6 +111,8 @@ module.exports = {
                             linkImagesToOriginal: false,
                         },
                     },
+
+                    // Syntax highlighting
                     {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
@@ -136,13 +175,6 @@ module.exports = {
                         },
                     },
                 ],
-            },
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `images`,
-                path: path.join(__dirname, `static`),
             },
         },
     ],
