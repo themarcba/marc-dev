@@ -24,7 +24,7 @@ export const query = graphql`
     query {
         file(relativePath: { eq: "images/profile.jpg" }) {
             childImageSharp {
-                fixed(width: 500) {
+                fixed(width: 150) {
                     src
                 }
             }
@@ -36,7 +36,7 @@ const AboutPage = props => {
     const profilePicture = (
         <img
             src={props.data.file.childImageSharp.fixed.src}
-            alt="Marc Backes"
+            alt="Profile picture of Marc Backes"
             className={aboutStyle.profilePicture}
         />
     )

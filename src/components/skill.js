@@ -15,7 +15,7 @@ const Skill = ({ name, file, progress }) => {
                     node {
                         name
                         childImageSharp {
-                            fixed(width: 200) {
+                            fixed(width: 130) {
                                 ...GatsbyImageSharpFixed
                             }
                         }
@@ -44,7 +44,7 @@ const Skill = ({ name, file, progress }) => {
                 </div>
                 <span className={skillStyles.progressNumber}>{progress}%</span>
             </div>
-            <img src={imageNode.fixed.src} />
+            <img src={imageNode.fixed.src} alt={`Logo for ${name}`}/>
         </div>
     )
     return <div className={skillStyles.skill}>{image}</div>
