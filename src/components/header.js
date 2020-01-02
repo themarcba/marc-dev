@@ -124,7 +124,9 @@ const Header = () => {
                                     </span>
                                 )
                             return (
-                                <label className={headerStyles[`${theme}Mode`]}>
+                                <label
+                                    className={headerStyles[`${theme}Mode`]}
+                                >
                                     <input
                                         type="checkbox"
                                         onChange={e =>
@@ -138,6 +140,8 @@ const Header = () => {
                                         className={headerStyles.darkModeInput}
                                     />
                                     {button}
+                                    <span className={headerStyles.invisible}>Toggle dark mode</span>
+
                                 </label>
                             )
                         }}

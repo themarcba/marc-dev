@@ -36,6 +36,9 @@ const Head = ({ title, socialCardMeta, canonicalUrl, path }) => {
         ]
     }
 
+    const meta = [{name:'description', content: 'Marc is a Full-Stack Web Developer based in Luxembourg'}, ...socialCardMeta]
+    console.log('@@@@',meta);
+    
     return (
         <>
             <Helmet
@@ -51,7 +54,7 @@ const Head = ({ title, socialCardMeta, canonicalUrl, path }) => {
                           ]
                         : []
                 }
-                meta={socialCardMeta}
+                meta={meta}
             ></Helmet>
         </>
     )

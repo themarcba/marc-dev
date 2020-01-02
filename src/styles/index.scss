@@ -758,8 +758,8 @@ body {
     --secondaryBg: #fff;
     --secondaryBgHeavy: #fff;
     --textNormal: #222;
-    --lightText: rgba(0, 0, 0, 0.65);
-    --lighterText: rgba(0, 0, 0, 0.4);
+    --lightText: rgba(0, 0, 0, 0.45);
+    --lighterText: rgba(0, 0, 0, 0.35);
     --textLink: #691375;
     background-color: var(--bg);
 }
@@ -771,8 +771,8 @@ body.dark {
     --secondaryBg: #243447;
     --secondaryBgHeavy: #eee;
     --textNormal: rgba(255, 255, 255, 0.88);
-    --lightText: rgba(255, 255, 255, 0.65);
-    --lighterText: rgba(255, 255, 255, 0.4);
+    --lightText: rgba(255, 255, 255, 0.5);
+    --lighterText: rgba(255, 255, 255, 0.35);
     --textLink: rgb(29, 161, 242);
 }
 
