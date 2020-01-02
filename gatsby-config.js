@@ -26,6 +26,8 @@ module.exports = {
             },
         },
 
+        `gatsby-transformer-json`,    
+
         // For adding the scroll progress bar on top of the website
         {
             resolve: "gatsby-plugin-page-progress",

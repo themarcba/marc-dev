@@ -17,15 +17,35 @@ module.exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
+            allRedirectsJson {
+                edges {
+                    node {
+                        path
+                        redirectTo
+                    }
+                }
+            }
         }
     `)
 
-    res.data.allContentfulBlogPost.edges.forEach(({ node }) => {        
+    // Create pages for blog posts
+    res.data.allContentfulBlogPost.edges.forEach(({ node }) => {
         createPage({
             component: blogTemplate,
             path: `/blog/${node.slug}`,
             context: {
                 slug: node.slug,
+            },
+        })
+    })
+
+    // Create pages for redirects
+    res.data.allRedirectsJson.edges.forEach(({ node }) => {
+        createPage({
+            component: redirectTemplate,
+            path: `${node.path}`,
+            context: {
+                url: node.redirectTo,
             },
         })
     })
