@@ -1,8 +1,12 @@
 import React from "react"
 
-const Redirect = ({ pageContext }) => {
-    window.location = pageContext.url
-    return <></>
+class Redirect extends React.Component {
+    componentDidMount() {
+        window.location = this.props.pageContext.url
+    }
+    render() {
+        return <></>
+    }
 }
 
 export default Redirect

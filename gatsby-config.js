@@ -18,6 +18,7 @@ module.exports = {
         hostname: process.env.HOSTNAME,
     },
     plugins: [
+        `gatsby-plugin-client-side-redirect`,
         // For adding lang= attribute to <html> tag
         {
             resolve: "gatsby-plugin-html-attributes",

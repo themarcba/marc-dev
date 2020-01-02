@@ -24,6 +24,7 @@
         "gatsby": "^2.18.14",
         "gatsby-image": "^2.2.34",
         "gatsby-plugin-buildtime-timezone": "^1.0.3",
+        "gatsby-plugin-client-side-redirect": "0.0.2",
         "gatsby-plugin-dark-mode": "^1.1.0",
         "gatsby-plugin-fathom": "^1.1.0",
         "gatsby-plugin-google-fonts": "^1.0.1",
