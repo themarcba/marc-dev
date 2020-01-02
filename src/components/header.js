@@ -43,10 +43,9 @@ const Header = () => {
                             </span>
                         )
                     } else if (
-                        pages.includes(location.pathname.replace(/\/$/, ""))
+                        pages.includes(location.pathname.replace(/\/$/, "")) &&
+                        !location.pathname.includes("404.htm")
                     ) {
-                        pages.includes(location.pathname.replace(/\/$/, ""))
-
                         return (
                             <span className={headerStyles.titleAfter}>
                                 {location.pathname.replace(/\/$/, "")}
@@ -124,9 +123,7 @@ const Header = () => {
                                     </span>
                                 )
                             return (
-                                <label
-                                    className={headerStyles[`${theme}Mode`]}
-                                >
+                                <label className={headerStyles[`${theme}Mode`]}>
                                     <input
                                         type="checkbox"
                                         onChange={e =>
@@ -140,8 +137,9 @@ const Header = () => {
                                         className={headerStyles.darkModeInput}
                                     />
                                     {button}
-                                    <span className={headerStyles.invisible}>Toggle dark mode</span>
-
+                                    <span className={headerStyles.invisible}>
+                                        Toggle dark mode
+                                    </span>
                                 </label>
                             )
                         }}
