@@ -45,12 +45,12 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
 
     // Create pages for redirects
-    res.data.allRedirectsJson.edges.forEach(({ node }) => {
+    res.data.allRedirectsJson.edges.forEach(({ node }) => {        
         createPage({
             component: redirectTemplate,
-            path: `${node.path}`,
+            path: node.path,
             context: {
-                url: node.redirectTo,
+                url: node.url,
                 text: node.text,
                 timeout: node.timeout
             },

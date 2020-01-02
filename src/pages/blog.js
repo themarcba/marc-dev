@@ -60,8 +60,6 @@ const BlogPage = (props) => {
             ""
         )
 
-    const isPublished = node => node.publishedAt <= new Date()
-
     const getPost = node => {
         return (
             <div className={blogStyles.post}>

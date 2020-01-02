@@ -8,9 +8,7 @@ class Redirect extends React.Component {
             window.location = this.props.pageContext.url
         }, timeout);
     }
-    render() {
-        console.log('@@@@',this.props.pageContext);
-        
+    render() {        
         const text = this.props.pageContext.text || "You are being redirected..."
         return (
             <div className={mainStyles.center}>
