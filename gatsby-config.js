@@ -27,7 +27,7 @@ module.exports = {
             },
         },
 
-        `gatsby-transformer-json`,    
+        `gatsby-transformer-json`,
 
         // For adding the scroll progress bar on top of the website
         {
@@ -104,7 +104,6 @@ module.exports = {
             resolve: "gatsby-transformer-remark",
             options: {
                 plugins: [
-
                     // Images in markdown
                     "gatsby-remark-relative-images",
                     {
