@@ -1,54 +1,36 @@
 import React from "react"
 import Layout from "../components/layout"
 import { Link } from "gatsby"
-import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import moment from "moment"
-import blogStyles from "./blog.module.scss"
-import categoryStyles from "./blog-categories.module.scss"
+import blogStyles from "./blog-index.module.scss"
+import mainStyles from "../styles/main.module.scss"
+import categoryStyles from "../pages/blog-categories.module.scss"
 import Head from "../components/head"
 import pluralize from "pluralize"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCalendar, faClock } from "@fortawesome/free-regular-svg-icons"
 import camelCase from "camelcase"
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 
-const BlogPage = (props) => {
-    const data = useStaticQuery(graphql`
-        query {
-            allContentfulBlogPost(
-                sort: { fields: publishedAt, order: DESC }
-                filter: { hideFromList: { ne: true } }
-            ) {
-                edges {
-                    node {
-                        title
-                        hideFromList
-                        slug
-                        excerpt {
-                            childMarkdownRemark {
-                                rawMarkdownBody
-                            }
-                        }
-                        md {
-                            childMarkdownRemark {
-                                timeToRead
-                            }
-                        }
-                        categories
-                        publishedAt
-                        coverImage {
-                            title
-                            fluid {
-                                sizes
-                                src
-                                srcSet
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    `)
+const NavLink = props => {
+    console.log(props)
+
+    if (!props.test) {
+        return (
+            <Link to={`/blog/${props.url}`} className={mainStyles.button}>
+                {props.text}
+            </Link>
+        )
+    } else {
+        return null
+    }
+}
+
+const IndexPage = ({ pageContext }) => {
+    const { group, index, first, last, pageCount } = pageContext
+    const previousUrl = index - 1 == 1 ? "/" : (index - 1).toString()
+    const nextUrl = (index + 1).toString()
 
     const getCoverImage = node =>
         node.coverImage ? (
@@ -106,16 +88,32 @@ const BlogPage = (props) => {
             </div>
         )
     }
+
     return (
         <Layout>
-            <Head title="Blog"  path={props.path} />
-            <div className={blogStyles.posts}>
-                {data.allContentfulBlogPost.edges.map(({ node }) =>
-                    getPost(node)
-                )}
+            <Head title="Blog" />
+
+            <div>
+                <div className={blogStyles.posts}>
+                    {group.map(({ node }) => getPost(node))}
+                </div>
+
+                <div className={blogStyles.pageButtons}>
+                    <NavLink
+                        test={first}
+                        url={previousUrl}
+                        text="Go to Previous Page"
+                        icon={<FontAwesomeIcon icon={faChevronRight} />}
+                    />
+                    <NavLink
+                        test={last}
+                        url={nextUrl}
+                        text="Go to Next Page"
+                        icon={<FontAwesomeIcon icon={faChevronRight} />}
+                    />
+                </div>
             </div>
         </Layout>
     )
 }
-
-export default BlogPage
+export default IndexPage

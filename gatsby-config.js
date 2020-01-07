@@ -57,6 +57,13 @@ module.exports = {
             },
         },
 
+        {
+            resolve: 'gatsby-plugin-mailchimp',
+            options: {
+                endpoint: 'https://dev.us4.list-manage.com/subscribe/post?u=8e6f0473494c027d2e284e73c&id=71a2542483', // add your MC list endpoint here; see instructions below
+            },
+        },
+
         // Dark mode button
         "gatsby-plugin-dark-mode",
 

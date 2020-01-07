@@ -120,3 +120,12 @@
 
     }
 }
+
+.pageButtons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    a {
+        margin: 0 0.5rem;
+    }
+}

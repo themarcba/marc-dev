@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Head from "../components/head"
 import indexStyles from "./index.module.scss"
 import mainStyles from "../styles/main.module.scss"
-import blogStyles from "./blog.module.scss"
+import blogIndexStyles from "../templates/blog-index.module.scss"
 import Typist from "react-typist"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -51,22 +51,22 @@ export const query = graphql`
 
 const getCoverImage = node =>{
     return node.coverImage ? (
-        <Img className={blogStyles.coverImage} fluid={node.coverImage.fluid} />
+        <Img className={blogIndexStyles.coverImage} fluid={node.coverImage.fluid} />
     ) : (
         ""
     )}
 
 const getPost = node => {
     return (
-        <div className={blogStyles.post}>
-            <Link to={`/blog/${node.slug}`} className={blogStyles.postLink}>
-                <div className={blogStyles.coverText}>
+        <div className={blogIndexStyles.post}>
+            <Link to={`/blog/${node.slug}`} className={blogIndexStyles.postLink}>
+                <div className={blogIndexStyles.coverText}>
                     <span>{node.title}</span>
                 </div>
                 {getCoverImage(node)}
             </Link>
             <div
-                className={blogStyles.postContent}
+                className={blogIndexStyles.postContent}
                 style={{ padding: 0 }}
             ></div>
         </div>

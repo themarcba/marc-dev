@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Head = ({ title, socialCardMeta, canonicalUrl, path }) => {
-    if (!canonicalUrl) {
+    if (!canonicalUrl && path) {
         canonicalUrl = `https://marc.dev${path}`
     }
     const data = useStaticQuery(graphql`
