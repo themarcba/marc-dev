@@ -51,7 +51,7 @@
 }
 
 .post-content {
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
 
     h2 {
         color: var(--textNormal);
@@ -69,14 +69,9 @@
 }
 
 .post-date {
-    font-size: 0.7rem !important;
-    color: var(--lighterNormal) !important;
-    margin-bottom: 0 !important;
-    height: auto;
-    max-height: 0;
-    overflow: hidden;
-    margin-top: 0;
-    transition: max-height 0.5s ease-in-out, margin-top 0.5s ease-in-out;
+    font-size: 0.8rem !important;
+    color: var(--lighterText) !important;
+    margin-bottom: 0.5rem;
 }
 
 .post {

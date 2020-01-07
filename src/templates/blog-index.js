@@ -112,6 +112,11 @@ const IndexPage = ({ pageContext }) => {
                     {getCoverImage(node)}
                 </Link>
                 <div className={blogStyles.postContent}>
+                    <div className={blogStyles.postDate}>
+                        <FontAwesomeIcon icon={faCalendar} />
+                        &nbsp;
+                        {moment(node.publishedAt).format("MMMM Do, YYYY")}
+                    </div>
                     <div className={categoryStyles.categories}>
                         {node.categories.map(category => (
                             <div
@@ -132,11 +137,11 @@ const IndexPage = ({ pageContext }) => {
                         <h2>{node.title}</h2>
                     </Link>
                     <p>{node.excerpt.childMarkdownRemark.rawMarkdownBody}</p>
-                    <p className={blogStyles.postDate}>
+                    {/* <p className={blogStyles.postDate}>
                         <FontAwesomeIcon icon={faCalendar} />
                         &nbsp;
                         {moment(node.publishedAt).format("MMMM Do, YYYY")}
-                    </p>
+                    </p> */}
                 </div>
             </div>
         )
