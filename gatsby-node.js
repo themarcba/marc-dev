@@ -1,5 +1,5 @@
 const path = require("path")
-const createPaginatedPages = require('gatsby-paginate')
+const createPaginatedPages = require("gatsby-paginate")
 
 module.exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
@@ -55,14 +55,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
         }
     `)
 
+    // Index page for blog posts, paginated
     createPaginatedPages({
         edges: res.data.allContentfulBlogPost.edges,
         createPage: createPage,
         pageTemplate: blogIndexTemplate,
-        pageLength: 5, // This is optional and defaults to 10 if not used
-        pathPrefix: '/blog', // This is optional and defaults to an empty string if not used
-        context: {}, // This is optional and defaults to an empty object if not used
-      })
+        pageLength: 5,
+        pathPrefix: "/blog",
+        context: {},
+    })
 
     // Create pages for blog posts
     res.data.allContentfulBlogPost.edges.forEach(({ node }) => {

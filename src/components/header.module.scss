@@ -60,6 +60,7 @@
     top: 1.5rem;
     right: 1.5rem;
     font-size: 1.5rem;
+    display: none;
     @media screen and (min-width: 501px) {
         display: none;
     }
@@ -69,8 +70,9 @@
     display: flex;
     list-style-type: none;
     margin: 0;
+    flex-wrap: wrap;
     @media screen and (max-width: 500px) {
-        display: none;
+        // display: none;
     }
 }
 
