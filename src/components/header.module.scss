@@ -55,10 +55,23 @@
     }
 }
 
+.menu {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    @media screen and (min-width: 501px) {
+        display: none;
+    }
+}
+
 .nav-list {
     display: flex;
     list-style-type: none;
     margin: 0;
+    @media screen and (max-width: 500px) {
+        display: none;
+    }
 }
 
 .nav-item {

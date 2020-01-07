@@ -5,7 +5,7 @@ import headerStyles from "./header.module.scss"
 import { useStaticQuery, graphql } from "gatsby"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
+import { faMoon, faSun, faBars } from "@fortawesome/free-solid-svg-icons"
 
 const Header = () => {
     const data = useStaticQuery(graphql`
@@ -70,6 +70,10 @@ const Header = () => {
                 </Link>
                 {location}
             </h1>
+
+            <label className={headerStyles.menu} data-menu-toggle for="hamburger-menu-toggle">
+                <FontAwesomeIcon icon={faBars} />
+            </label>
 
             <ul className={headerStyles.navList}>
                 <li>

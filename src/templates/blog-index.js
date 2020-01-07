@@ -11,7 +11,18 @@ import pluralize from "pluralize"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCalendar, faClock } from "@fortawesome/free-regular-svg-icons"
 import camelCase from "camelcase"
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
+import {
+    faChevronRight,
+    faCog,
+    faChartLine,
+    faStopwatch,
+    faBookOpen,
+    faGlasses,
+    faCodeBranch,
+    faTrain,
+    faBullhorn,
+} from "@fortawesome/free-solid-svg-icons"
+import { faNodeJs, faJs, faHtml5 } from "@fortawesome/free-brands-svg-icons"
 
 const NavLink = props => {
     console.log(props)
@@ -25,6 +36,46 @@ const NavLink = props => {
     } else {
         return null
     }
+}
+
+const CategoryIcon = ({ category }) => {
+    let icon
+    switch (category) {
+        case "node":
+            icon = faNodeJs
+            break
+        case "javascript":
+            icon = faJs
+            break
+        case "es6":
+            icon = faJs
+            break
+        case "html":
+            icon = faHtml5
+            break
+        case "seo":
+            icon = faChartLine
+            break
+        case "productivity":
+            icon = faStopwatch
+            break
+        case "anecdote":
+            icon = faBookOpen
+            break
+        case "beginner":
+            icon = faGlasses
+            break
+        case "git":
+            icon = faCodeBranch
+            break
+        case "rails":
+            icon = faTrain
+            break
+        case "announcement":
+            icon = faBullhorn
+            break
+    }
+    return category ? <FontAwesomeIcon icon={icon} /> : null
 }
 
 const IndexPage = ({ pageContext }) => {
@@ -41,6 +92,8 @@ const IndexPage = ({ pageContext }) => {
         ) : (
             ""
         )
+
+    const getIcon = category => {}
 
     const getPost = node => {
         return (
@@ -68,7 +121,7 @@ const IndexPage = ({ pageContext }) => {
                                     ]
                                 }
                             >
-                                #{category}
+                                #{category} <CategoryIcon category={category} />
                             </div>
                         ))}
                     </div>

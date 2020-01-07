@@ -146,10 +146,6 @@ const Blog = props => {
                             .html,
                 }}
             ></div>
-            {/* {documentToReactComponents(
-                props.data.contentfulBlogPost.body.json,
-                options
-            )} */}
         </Layout>
     )
 }
