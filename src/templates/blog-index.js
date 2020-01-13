@@ -13,7 +13,6 @@ import { faCalendar, faClock } from "@fortawesome/free-regular-svg-icons"
 import camelCase from "camelcase"
 import {
     faChevronRight,
-    faCog,
     faChartLine,
     faStopwatch,
     faBookOpen,
@@ -74,13 +73,15 @@ const CategoryIcon = ({ category }) => {
         case "announcement":
             icon = faBullhorn
             break
+        default:
+            break
     }
     return category ? <FontAwesomeIcon icon={icon} /> : null
 }
 
 const IndexPage = ({ pageContext }) => {
-    const { group, index, first, last, pageCount } = pageContext
-    const previousUrl = index - 1 == 1 ? "/" : (index - 1).toString()
+    const { group, index, first, last } = pageContext // {pageCount}
+    const previousUrl = index - 1 === 1 ? "/" : (index - 1).toString()
     const nextUrl = (index + 1).toString()
 
     const getCoverImage = node =>
@@ -92,8 +93,6 @@ const IndexPage = ({ pageContext }) => {
         ) : (
             ""
         )
-
-    const getIcon = category => {}
 
     const getPost = node => {
         return (

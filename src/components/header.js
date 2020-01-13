@@ -42,6 +42,8 @@ const Header = () => {
                                 /blog
                             </span>
                         )
+                    } else if (location.pathname.includes("mentorship")) {
+                        return null
                     } else if (
                         pages.includes(location.pathname.replace(/\/$/, "")) &&
                         !location.pathname.includes("404.htm")

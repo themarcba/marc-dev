@@ -101,6 +101,10 @@ const UsesPage = props => {
                             <a href="https://any.do/">Any.do</a>
                         </td>
                     </tr>
+                    <tr>
+                        <td>Window Management</td>
+                        <td><a href="https://mizage.com/divvy/">Divvy</a></td>
+                    </tr>
                 </table>
 
                 <h1>Hosting & Co.</h1>

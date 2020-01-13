@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Head from "../components/head"
 import aboutStyle from "./about.module.scss"
@@ -32,11 +31,11 @@ export const query = graphql`
     }
 `
 
-const AboutPage = props => {    
+const AboutPage = props => {
     const profilePicture = (
         <img
             src={props.data.file.childImageSharp.fixed.src}
-            alt="Profile picture of Marc Backes"
+            alt="Marc Backes"
             className={aboutStyle.profilePicture}
         />
     )
@@ -46,9 +45,7 @@ const AboutPage = props => {
             <Head title="About" path={props.path} />
             <div className={aboutStyle.about}>
                 <div className={aboutStyle.intro}>
-                    <div>
-                        {profilePicture}
-                    </div>
+                    <div>{profilePicture}</div>
                     <div className={aboutStyle.introText}>
                         <h1>
                             Hello <FontAwesomeIcon icon={faHandPeace} />
@@ -253,10 +250,12 @@ const AboutPage = props => {
                     I have a big entrepreneurial and startup curiosity which is
                     devided in two fields. On one hand, small companies which
                     try to make it big such as{" "}
-                    <a href="https://avena.io" className={mainStyle.link}>Avena</a> (Mexican-originated
-                    fitness app). On the other hand, I like following strategic
-                    moves and happenings in big players such as{" "}
-                    <strong>Facebook, Netflix, Spotify</strong>.
+                    <a href="https://avena.io" className={mainStyle.link}>
+                        Avena
+                    </a>{" "}
+                    (Mexican-originated fitness app). On the other hand, I like
+                    following strategic moves and happenings in big players such
+                    as <strong>Facebook, Netflix, Spotify</strong>.
                 </p>
 
                 <h2>

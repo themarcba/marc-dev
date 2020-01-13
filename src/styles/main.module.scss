@@ -1,9 +1,21 @@
-@import './index.scss';
+@import "./index.scss";
 
 @mixin gradient-text {
     color: #6e3a6c;
-    background: -webkit-gradient(linear, left top, right top, from(#e48a28), color-stop(50%, #cc4856), to(#6e3a6c));
-    background: linear-gradient(to right, #e48a28 0%, #cc4856 50%, #6e3a6c 100%);
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#e48a28),
+        color-stop(50%, #cc4856),
+        to(#6e3a6c)
+    );
+    background: linear-gradient(
+        to right,
+        #e48a28 0%,
+        #cc4856 50%,
+        #6e3a6c 100%
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -20,28 +32,27 @@
         @media screen and (max-width: 500px) {
             font-size: 2rem;
         }
-    
+
         @media screen and (min-width: 501px) and (max-width: 750px) {
             font-size: 3rem;
         }
-    
+
         @media screen and (min-width: 751px) {
             font-size: 3rem;
         }
-    
     }
-    
+
     h2 {
         color: var(--textNormal);
 
         @media screen and (max-width: 500px) {
             font-size: 1.8rem;
         }
-    
+
         @media screen and (min-width: 501px) and (max-width: 750px) {
             font-size: 2.2rem;
         }
-    
+
         @media screen and (min-width: 751px) {
             font-size: 2.5rem;
         }
@@ -62,7 +73,6 @@
             font-size: 1.8rem;
         }
     }
-
 }
 
 .post-content {
@@ -70,7 +80,7 @@
         @include link();
     }
     img {
-        border-radius: 8px; 
+        border-radius: 8px;
     }
     pre {
         // background: var(--secondaryBg) !important;
@@ -141,7 +151,7 @@
 
         &:before {
             margin-left: -35px;
-            content: '#';
+            content: "#";
         }
     }
 
@@ -152,7 +162,7 @@
 
         &:before {
             margin-left: -45px;
-            content: '##';
+            content: "##";
         }
     }
 
@@ -163,7 +173,7 @@
 
         &:before {
             margin-left: -55px;
-            content: '###';
+            content: "###";
         }
     }
 
@@ -174,7 +184,7 @@
 
         &:before {
             margin-left: -50px;
-            content: '####';
+            content: "####";
         }
     }
 
@@ -185,7 +195,7 @@
 
         &:before {
             margin-left: -52px;
-            content: '#####';
+            content: "#####";
         }
     }
 
@@ -196,7 +206,7 @@
 
         &:before {
             margin-left: -55px;
-            content: '######';
+            content: "######";
         }
     }
 
@@ -217,7 +227,13 @@
         border-right: 0;
         border-left-width: 3px;
         border-style: solid;
-        border-image: linear-gradient(to bottom, #e48a28 0%, #cc4856 50%, #6e3a6c 100%) 1 100%;
+        border-image: linear-gradient(
+                to bottom,
+                #e48a28 0%,
+                #cc4856 50%,
+                #6e3a6c 100%
+            )
+            1 100%;
         padding-left: 2.5rem;
 
         &:before {
@@ -273,4 +289,54 @@
     justify-content: center;
     height: 100vh;
     align-items: center;
+}
+
+.card {
+    background: var(--secondaryBg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 0px 10px 20px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 10px 20px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 20px 1px rgba(0, 0, 0, 0.2);
+
+    h1 {
+        color: var(--textLink);
+    }
+}
+
+.formFields {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+.formField {
+    // border: solid red 2px;
+    box-sizing: border-box;
+    width: 200px;
+    padding: 0.5rem;
+
+    @media screen and (max-width: 750px) {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 751px) {
+        width: 50%;
+    }
+
+
+    input {
+        border: 0;
+        outline: 0;
+        border-radius: 0.25rem;
+        background: #fff;
+        border: solid var(--textLink) 2px;
+        padding: .25rem;
+        width: 100%;
+    }
+
+    span {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
 }
