@@ -4,10 +4,13 @@ import moment from "moment"
 import pluralize from "pluralize"
 import Img from "gatsby-image"
 import blogStyle from "./blog.module.scss"
+import categoryStyles from "../pages/blog-categories.module.scss"
 import mainStyles from "../styles/main.module.scss"
 import Layout from "../components/layout"
 import Head from "../components/head"
 import { Link } from "gatsby"
+import camelCase from "camelcase"
+import { CategoryIcon } from "../templates/blog-index"
 
 export const query = graphql`
     query($slug: String!) {
@@ -16,6 +19,7 @@ export const query = graphql`
             publishedAt
             slug
             canonicalUrl
+            categories
             md {
                 childMarkdownRemark {
                     html
@@ -100,8 +104,10 @@ const Blog = props => {
         ]
     }
 
-    const canonicalUrl = props.data.contentfulBlogPost.canonicalUrl || `https://marc.dev/blog/${props.data.contentfulBlogPost.slug}`
-    
+    const canonicalUrl =
+        props.data.contentfulBlogPost.canonicalUrl ||
+        `https://marc.dev/blog/${props.data.contentfulBlogPost.slug}`
+
     return (
         <Layout>
             <Head
@@ -135,6 +141,19 @@ const Blog = props => {
                     />
                 </Link>
             </p>
+            <div className={categoryStyles.categories}>
+                    {props.data.contentfulBlogPost.categories.map(category => (
+                        <div
+                            className={
+                                categoryStyles[
+                                    camelCase(`category-${category}`)
+                                ]
+                            }
+                        >
+                            #{category} <CategoryIcon category={category} />
+                        </div>
+                    ))}
+                </div>
 
             {coverImage}
 
