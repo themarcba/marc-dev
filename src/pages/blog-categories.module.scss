@@ -1,12 +1,12 @@
 @mixin category {
     border-radius: 6px;
-    padding: 1px 10px;
+    // padding: 1px 10px;
     display: inline-block;
     margin: 0 0.5rem 0.3rem 0;
     font-size: 0.8rem;
     font-weight: bold;
-    background: #333;
-    color: #fff;
+    // background: #333;
+    color: var(--textNormal);
 }
 
 .categories {
@@ -15,56 +15,42 @@
     }
 }
 .category-javascript, .category-es6 {
-    background: #f7df1e !important;
-    color: #333 !important;
+    // background: #f7df1e !important;
+    color: #ead630 !important;
 }
 
 .category-vue {
-    background: #42b883 !important;
-    color: #fff !important;
+    color: #42b883 !important;
 }
 
 .category-react {
-    background: #00d8ff !important;
-    color: #fff !important;
+    color: #00d8ff !important;
 }
 
 .category-node {
-    background: #6cc24a !important;
-    color: #215732 !important;
+    color: #6cc24a !important;
 }
 
 .category-gatsby {
-    background: #362066 !important;
-    color: #fff !important;
+    color: #8a4baf !important;
 }
 
 .category-rails {
-    background: #cc0000 !important;
-    color: #fff !important;
+    color: #cc0000 !important;
 }
 
 .category-git {
-    background: #4078c0 !important;
-    color: #fff !important;
+    color: #4078c0 !important;
 }
 
 .category-css {
-    background: #274DE4 !important;
-    color: #fff !important;
-}
-
-.category-anecdote {
-    background: #34495e !important;
-    color: #fff !important;
+    color: #7e5cff !important;
 }
 
 .category-announcement {
-    background: #e74c3c !important;
-    color: #fff !important;
+    color: #e74c3c !important;
 }
 
 .category-html {
-    background: #FFA500 !important;
-    color: #000 !important;
+    color: #FFA500 !important;
 }

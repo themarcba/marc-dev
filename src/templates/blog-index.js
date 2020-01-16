@@ -116,7 +116,21 @@ const IndexPage = ({ pageContext }) => {
                         &nbsp;
                         {moment(node.publishedAt).format("MMMM Do, YYYY")}
                     </div>
+
                     <div className={categoryStyles.categories}>
+                        {/* <div className={categoryStyles[camelCase('category-javascript')]}>#javascript <CategoryIcon category="javascript" /></div>
+                        <div className={categoryStyles[camelCase('category-es6')]}>#es6 <CategoryIcon category="es6" /></div>
+                        <div className={categoryStyles[camelCase('category-vue')]}>#vue <CategoryIcon category="vue" /></div>
+                        <div className={categoryStyles[camelCase('category-react')]}>#react <CategoryIcon category="react" /></div>
+                        <div className={categoryStyles[camelCase('category-node')]}>#node <CategoryIcon category="node" /></div>
+                        <div className={categoryStyles[camelCase('category-gatsby')]}>#gatsby <CategoryIcon category="gatsby" /></div>
+                        <div className={categoryStyles[camelCase('category-rails')]}>#rails <CategoryIcon category="rails" /></div>
+                        <div className={categoryStyles[camelCase('category-git')]}>#git <CategoryIcon category="git" /></div>
+                        <div className={categoryStyles[camelCase('category-css')]}>#css <CategoryIcon category="css" /></div>
+                        <div className={categoryStyles[camelCase('category-anecdote')]}>#anecdote <CategoryIcon category="anecdote" /></div>
+                        <div className={categoryStyles[camelCase('category-announcement')]}>#announcement <CategoryIcon category="announcement" /></div>
+                        <div className={categoryStyles[camelCase('category-html')]}>#html <CategoryIcon category="html" /></div> */}
+
                         {node.categories.map(category => (
                             <div
                                 className={
