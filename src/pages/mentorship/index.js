@@ -62,7 +62,6 @@ const MentorshipIndex = props => {
                 <ul>
                     <li>I will not do the work for you</li>
                     <li>I will not show you how to code 1:1</li>
-                    how to code
                 </ul>
 
                 <blockquote>
