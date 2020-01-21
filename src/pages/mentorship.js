@@ -1,8 +1,8 @@
 import React from "react"
-import mainStyles from "../../styles/main.module.scss"
-import blogStyles from "../../templates/blog.module.scss"
-import Layout from "../../components/layout"
-import Head from "../../components/head"
+import mainStyles from "../styles/main.module.scss"
+import blogStyles from "../templates/blog.module.scss"
+import Layout from "../components/layout"
+import Head from "../components/head"
 import Img from "gatsby-image"
 
 export const query = graphql`
