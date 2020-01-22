@@ -82,6 +82,20 @@ const Blog = props => {
                 name: "twitter:image",
                 content: `https:${props.data.contentfulBlogPost.coverImage.fixed.src}`,
             },
+            {
+                name: "og:title",
+                content: props.data.contentfulBlogPost.title,
+            },
+            {
+                name: "og:description",
+                content:
+                    props.data.contentfulBlogPost.excerpt.childMarkdownRemark
+                        .rawMarkdownBody,
+            },
+            {
+                name: "og:image",
+                content: `https:${props.data.contentfulBlogPost.coverImage.fixed.src}`,
+            },
         ]
     } else {
         socialCardMeta = [
@@ -142,18 +156,16 @@ const Blog = props => {
                 </Link>
             </p>
             <div className={categoryStyles.categories}>
-                    {props.data.contentfulBlogPost.categories.map(category => (
-                        <div
-                            className={
-                                categoryStyles[
-                                    camelCase(`category-${category}`)
-                                ]
-                            }
-                        >
-                            #{category} <CategoryIcon category={category} />
-                        </div>
-                    ))}
-                </div>
+                {props.data.contentfulBlogPost.categories.map(category => (
+                    <div
+                        className={
+                            categoryStyles[camelCase(`category-${category}`)]
+                        }
+                    >
+                        #{category} <CategoryIcon category={category} />
+                    </div>
+                ))}
+            </div>
 
             {coverImage}
 

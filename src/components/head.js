@@ -33,11 +33,30 @@ const Head = ({ title, socialCardMeta, canonicalUrl, path }) => {
                 name: "twitter:image",
                 content: "https://marc.dev/images/socialCard.jpg",
             },
+            {
+                name: "og:title",
+                content: title,
+            },
+            {
+                name: "og:description",
+                content:
+                    "Marc is a Full-Stack Web Developer based in Luxembourg 👨‍💻",
+            },
+            {
+                name: "og:image",
+                content: "https://marc.dev/images/socialCard.jpg",
+            },
         ]
     }
 
-    const meta = [{name:'description', content: 'Marc is a Full-Stack Web Developer based in Luxembourg'}, ...socialCardMeta]
-    
+    const meta = [
+        {
+            name: "description",
+            content: "Marc is a Full-Stack Web Developer based in Luxembourg",
+        },
+        ...socialCardMeta,
+    ]
+
     return (
         <>
             <Helmet

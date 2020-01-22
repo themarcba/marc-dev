@@ -29,18 +29,38 @@ const MentorshipIndex = props => {
         },
         {
             name: "twitter:description",
-            content:
-                "Mentorship for aspiring web developers",
+            content: "Mentorship for aspiring web developers",
         },
         {
             name: "twitter:image",
             content: "https://marc.dev/images/mentorship.jpg",
         },
+
+        {
+            name: "og:title",
+            content: "Apply for  free mentorship",
+        },
+        {
+            name: "og:description",
+            content: "Mentorship for aspiring web developers",
+        },
+        {
+            name: "og:image",
+            content: "https://marc.dev/images/mentorship.jpg",
+        },
+        {
+            name: "og:url",
+            content: "https://marc.dev/mentorship",
+        },
     ]
 
     return (
         <Layout>
-            <Head title="Apply to mentorship" path="/mentorship" socialCardMeta={socialCardMeta} />
+            <Head
+                title="Apply to mentorship"
+                path="/mentorship"
+                socialCardMeta={socialCardMeta}
+            />
 
             <Img
                 className={blogStyles.coverImage}
