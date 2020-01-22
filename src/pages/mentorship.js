@@ -47,6 +47,11 @@ const MentorshipIndex = props => {
                         at the end you can create real-world web applications
                     </li>
                     <li>
+                        I will tailor a unique experience for each menteeor each
+                        mentee, depending on their background in development and
+                        their aspirations.
+                    </li>
+                    <li>
                         I will hold you accountable for goals we both set
                         together for you
                     </li>
@@ -125,6 +130,7 @@ const MentorshipIndex = props => {
 
                 <h2>Other details</h2>
                 <ul>
+                    <li>I am in timezone UTC+2</li>
                     <li>Applications end 31/01/2020</li>
                     <li>The mentorship is open-ended</li>
                     <li>Once a month we make a mentorship evaluation</li>
