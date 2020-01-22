@@ -4,6 +4,7 @@ import blogStyles from "../templates/blog.module.scss"
 import Layout from "../components/layout"
 import Head from "../components/head"
 import Img from "gatsby-image"
+import { Link } from "gatsby"
 
 export const query = graphql`
     query {
@@ -149,6 +150,20 @@ const MentorshipIndex = props => {
                     many people who helped me on my way to become a web
                     developer and I’d like to pay all of that forward in the
                     hope it multiplies.
+                </p>
+
+                <h2>More about me</h2>
+                <p>
+                    I am good at desigining and creating complex applications.
+                    At the moment I work with Node.js, Express.js, MongoDB, and
+                    Vue.js.
+                </p>
+                <p>
+                    To check out my whole background, see my{" "}
+                    <Link className={mainStyles.link} to="/about">
+                        about page
+                    </Link>
+                    .
                 </p>
 
                 <h2>Requirements</h2>
