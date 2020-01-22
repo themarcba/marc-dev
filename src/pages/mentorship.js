@@ -85,6 +85,29 @@ const MentorshipIndex = props => {
                     <li>You put in the work to reach the defined goals</li>
                 </ul>
 
+                <h2>What I hope from this?</h2>
+                <p>
+                    What I expect from this mentorship, or rather what I want to
+                    get out of it is threefold:
+                </p>
+                <p>
+                    First, I enjoyed teaching when I taught one year at college
+                    level, and I miss it. This will hopefully give me a similar
+                    experience.
+                </p>
+                <p>
+                    Second, I hope to give enough insight to actually navigate
+                    someone through the craziness which is the web development
+                    ecosystem enough that they are able to pick what's best for
+                    them and be able to build real apps and enjoy the process.
+                </p>
+                <p>
+                    Third, I want to give back to the community. There are so
+                    many people who helped me on my way to become a web
+                    developer and I’d like to pay all of that forward in the
+                    hope it multiplies.
+                </p>
+
                 <h2>Requirements</h2>
                 <li>
                     You already have basic coding skills and are familiarised
@@ -120,8 +143,15 @@ const MentorshipIndex = props => {
                     </li>
                 </ul>
             </div>
-            
-            <p style={{textAlign: 'center'}}><a className={mainStyles.button} href="https://marcbackes.typeform.com/to/fu7X5B">Apply now</a></p>
+
+            <p style={{ textAlign: "center" }}>
+                <a
+                    className={mainStyles.button}
+                    href="https://marcbackes.typeform.com/to/fu7X5B"
+                >
+                    Apply now
+                </a>
+            </p>
         </Layout>
     )
 }
