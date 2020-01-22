@@ -20,9 +20,27 @@ export const query = graphql`
 `
 
 const MentorshipIndex = props => {
+    const socialCardMeta = [
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@_marcba" },
+        {
+            name: "twitter:title",
+            content: "Apply for  free mentorship",
+        },
+        {
+            name: "twitter:description",
+            content:
+                "Mentorship for aspiring web developers",
+        },
+        {
+            name: "twitter:image",
+            content: "https://marc.dev/images/mentorship.jpg",
+        },
+    ]
+
     return (
         <Layout>
-            <Head title="Apply to mentorship" path="/mentorship" />
+            <Head title="Apply to mentorship" path="/mentorship" socialCardMeta={socialCardMeta} />
 
             <Img
                 className={blogStyles.coverImage}
