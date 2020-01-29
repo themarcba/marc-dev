@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import Head from "../components/head"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSadTear } from "@fortawesome/free-regular-svg-icons"
 
 export const query = graphql`
     query {
@@ -69,14 +71,23 @@ const MentorshipIndex = props => {
             /> */}
 
             <div style={{ textAlign: "center" }}>
-                <h1>Web Developer Mentorship</h1>
+                <div style={{fontSize: '6rem', margin: '3rem 0'}}>
+                    <FontAwesomeIcon icon={faSadTear} />
+                </div>
                 <p>
                     I'm sorry, you missed it.
                     <br />
-                    The application deadline is already over 😞
+                    The application deadline has already passed.
                 </p>
                 <p>
-                    Follow me on <a className={mainStyles.link} href="https://twitter.com/_marcba">Twitter</a> to know about future opportunities.
+                    Follow me on{" "}
+                    <a
+                        className={mainStyles.link}
+                        href="https://twitter.com/_marcba"
+                    >
+                        Twitter
+                    </a>{" "}
+                    to know about future opportunities.
                 </p>
             </div>
         </Layout>
