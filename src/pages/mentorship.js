@@ -71,7 +71,7 @@ const MentorshipIndex = props => {
             /> */}
 
             <div style={{ textAlign: "center" }}>
-                <div style={{fontSize: '6rem', margin: '3rem 0'}}>
+                <div style={{fontSize: '6rem', margin: '3rem 0', color: 'var(--lighterText)'}}>
                     <FontAwesomeIcon icon={faSadTear} />
                 </div>
                 <p>
