@@ -91,6 +91,7 @@
         margin: 2rem 0;
         font-size: 0.9rem;
         code {
+            padding : 0 !important;
             &.language-text {
                 background: var(--secondaryBg) !important;
             }
