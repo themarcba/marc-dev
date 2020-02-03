@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import moment from "moment"
-import blogStyles from "./blog-index.module.scss"
+import blogIndexStyles from "./blog-index.module.scss"
 import mainStyles from "../styles/main.module.scss"
 import categoryStyles from "../pages/blog-categories.module.scss"
 import Head from "../components/head"
@@ -85,18 +85,23 @@ const IndexPage = ({ pageContext }) => {
     const getCoverImage = node =>
         node.coverImage ? (
             <Img
-                className={blogStyles.coverImage}
+                className={blogIndexStyles.coverImage}
                 fluid={node.coverImage.fluid}
             />
         ) : (
             ""
         )
-
     const getPost = node => {
+        const featuredRibbon = node.isFeatured ? (
+            <div className={blogIndexStyles.featuredRibbon}>
+                <span>Featured</span>
+            </div>
+        ) : null
         return (
-            <div className={blogStyles.post}>
-                <Link to={`/blog/${node.slug}`} className={blogStyles.postLink}>
-                    <div className={blogStyles.readTime}>
+            <div className={blogIndexStyles.post}>
+                { featuredRibbon }
+                <Link to={`/blog/${node.slug}`} className={blogIndexStyles.postLink}>
+                    <div className={blogIndexStyles.readTime}>
                         <FontAwesomeIcon icon={faClock} />
                         &nbsp;
                         {pluralize(
@@ -108,8 +113,8 @@ const IndexPage = ({ pageContext }) => {
                     </div>
                     {getCoverImage(node)}
                 </Link>
-                <div className={blogStyles.postContent}>
-                    <div className={blogStyles.postDate}>
+                <div className={blogIndexStyles.postContent}>
+                    <div className={blogIndexStyles.postDate}>
                         <FontAwesomeIcon icon={faCalendar} />
                         &nbsp;
                         {moment(node.publishedAt).format("MMMM Do, YYYY")}
@@ -130,16 +135,11 @@ const IndexPage = ({ pageContext }) => {
                     </div>
                     <Link
                         to={`/blog/${node.slug}`}
-                        className={blogStyles.postLink}
+                        className={blogIndexStyles.postLink}
                     >
                         <h2>{node.title}</h2>
                     </Link>
                     <p>{node.excerpt.childMarkdownRemark.rawMarkdownBody}</p>
-                    {/* <p className={blogStyles.postDate}>
-                        <FontAwesomeIcon icon={faCalendar} />
-                        &nbsp;
-                        {moment(node.publishedAt).format("MMMM Do, YYYY")}
-                    </p> */}
                 </div>
             </div>
         )
@@ -150,11 +150,11 @@ const IndexPage = ({ pageContext }) => {
             <Head title="Blog" />
 
             <div>
-                <div className={blogStyles.posts}>
+                <div className={blogIndexStyles.posts}>
                     {group.map(({ node }) => getPost(node))}
                 </div>
 
-                <div className={blogStyles.pageButtons}>
+                <div className={blogIndexStyles.pageButtons}>
                     <NavLink
                         test={first}
                         url={previousUrl}

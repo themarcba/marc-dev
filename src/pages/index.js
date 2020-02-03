@@ -26,7 +26,7 @@ export const query = graphql`
         }
         allContentfulBlogPost(
             sort: { fields: publishedAt, order: DESC }
-            filter: { hideFromList: { ne: true } }
+            filter: { hideFromList: { ne: true }, isFeatured: { eq: true } }
             limit: 2
         ) {
             edges {
@@ -49,17 +49,28 @@ export const query = graphql`
     }
 `
 
-const getCoverImage = node =>{
+const getCoverImage = node => {
     return node.coverImage ? (
-        <Img className={blogIndexStyles.coverImage} fluid={node.coverImage.fluid} />
+        <Img
+            className={blogIndexStyles.coverImage}
+            fluid={node.coverImage.fluid}
+        />
     ) : (
         ""
-    )}
+    )
+}
 
 const getPost = node => {
     return (
         <div className={blogIndexStyles.post}>
-            <Link to={`/blog/${node.slug}`} className={blogIndexStyles.postLink}>
+            <div className={blogIndexStyles.featuredRibbon}>
+                <span>Featured</span>
+            </div>
+
+            <Link
+                to={`/blog/${node.slug}`}
+                className={blogIndexStyles.postLink}
+            >
                 <div className={blogIndexStyles.coverText}>
                     <span>{node.title}</span>
                 </div>
@@ -140,7 +151,7 @@ const IndexPage = props => {
                 </p>
 
                 <h3 className={indexStyles.title}>
-                    Latest blog posts <FontAwesomeIcon icon={faPenFancy} />
+                    <span className={mainStyles.gradientText}>Featured</span> blog posts <FontAwesomeIcon icon={faPenFancy} />
                 </h3>
 
                 <div className={indexStyles.posts}>

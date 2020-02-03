@@ -17,6 +17,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
                     node {
                         title
                         hideFromList
+                        isFeatured
                         slug
                         excerpt {
                             childMarkdownRemark {

@@ -296,6 +296,10 @@
     align-items: center;
 }
 
+.gradientText {
+    @include gradient-text();
+}
+
 .card {
     background: var(--secondaryBg);
     padding: 1rem;
