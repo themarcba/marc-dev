@@ -15,6 +15,16 @@
     }
 }
 
+.social {
+    font-size: 1.2rem;
+    a {
+        margin: 0 0.25rem;
+        &:hover {
+            color: var(--textLink)
+        }
+    }
+}
+
 .line {
     display: flex;
     align-items: center;

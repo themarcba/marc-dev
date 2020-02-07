@@ -10,6 +10,7 @@ import {
     faGithub,
     faDev,
     faLinkedin,
+    faCodepen,
 } from "@fortawesome/free-brands-svg-icons"
 
 const ContactPage = (props) => {
@@ -51,6 +52,10 @@ const ContactPage = (props) => {
 
                 <a href="https://dev.to/_marcba" class={contactStyle.iconLink}>
                     <FontAwesomeIcon icon={faDev} />
+                </a>
+
+                <a href="https://codepen.io/_marcba" class={contactStyle.iconLink}>
+                    <FontAwesomeIcon icon={faCodepen} />
                 </a>
 
                 <a

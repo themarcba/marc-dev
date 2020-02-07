@@ -3,6 +3,13 @@ import { graphql, useStaticQuery } from "gatsby"
 import footerStyles from "./footer.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart, faCode } from "@fortawesome/free-solid-svg-icons"
+import {
+    faTwitter,
+    faGithub,
+    faDev,
+    faLinkedin,
+    faCodepen,
+} from "@fortawesome/free-brands-svg-icons"
 
 const Footer = () => {
     const data = useStaticQuery(graphql`
@@ -34,6 +41,27 @@ const Footer = () => {
                         alt="GatsbyJS"
                         className={footerStyles.gatsbyLogo}
                     />
+                </a>
+            </p>
+            <p className={footerStyles.social}>
+                <a href="https://www.twitter.com/_marcba">
+                    <FontAwesomeIcon icon={faTwitter} />
+                </a>
+
+                <a href="https://github.com/themarcba">
+                    <FontAwesomeIcon icon={faGithub} />
+                </a>
+
+                <a href="https://dev.to/_marcba">
+                    <FontAwesomeIcon icon={faDev} />
+                </a>
+
+                <a href="https://codepen.io/_marcba">
+                    <FontAwesomeIcon icon={faCodepen} />
+                </a>
+
+                <a href="https://www.linkedin.com/in/themarcba">
+                    <FontAwesomeIcon icon={faLinkedin} />
                 </a>
             </p>
             <p className={footerStyles.small}>
