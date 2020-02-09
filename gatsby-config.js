@@ -14,7 +14,7 @@ module.exports = {
         title:
             "Full-Stack Web Developer | Marc Backes | JavaScript, Node.js, Vue.js",
         author: "Marc Backes",
-        version: "0.1.6",
+        version: "0.2.1",
         hostname: process.env.HOSTNAME,
     },
     plugins: [

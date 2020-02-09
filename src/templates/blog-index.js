@@ -21,7 +21,12 @@ import {
     faTrain,
     faBullhorn,
 } from "@fortawesome/free-solid-svg-icons"
-import { faNodeJs, faJs, faHtml5 } from "@fortawesome/free-brands-svg-icons"
+import {
+    faNodeJs,
+    faJs,
+    faHtml5,
+    faCodepen,
+} from "@fortawesome/free-brands-svg-icons"
 
 const NavLink = props => {
     if (!props.test) {
@@ -71,6 +76,9 @@ export const CategoryIcon = ({ category }) => {
         case "announcement":
             icon = faBullhorn
             break
+        case "codepen":
+            icon = faCodepen
+            break
         default:
             break
     }
@@ -91,7 +99,50 @@ const IndexPage = ({ pageContext }) => {
         ) : (
             ""
         )
+
+    const getCodepen = node => {
+        return (
+            <div className={blogIndexStyles.post}>
+                <Link
+                    to={`/codepen/${node.slug}`}
+                    className={blogIndexStyles.postLink}
+                >
+                    <img
+                        className={blogIndexStyles.coverImage}
+                        src={`/data/codepen-screenshots/${node.slug}.jpg`}
+                        alt=""
+                    />
+                </Link>
+                <div className={blogIndexStyles.postContent}>
+                    <div className={blogIndexStyles.postDate}>
+                        <FontAwesomeIcon icon={faCalendar} />
+                        &nbsp;
+                        {moment(node.publishedAt).format("MMMM Do, YYYY")}
+                    </div>
+
+                    <div className={categoryStyles.categories}>
+                        <div
+                            className={
+                                categoryStyles[camelCase(`category-codepen`)]
+                            }
+                        >
+                            #codepen <CategoryIcon category={"codepen"} />
+                        </div>
+                    </div>
+                    <Link
+                        to={`/codepen/${node.slug}`}
+                        className={blogIndexStyles.postLink}
+                    >
+                        <h2>{node.title}</h2>
+                    </Link>
+                    <p>{node.description}</p>
+                </div>
+            </div>
+        )
+    }
     const getPost = node => {
+        console.log(node)
+
         const featuredRibbon = node.isFeatured ? (
             <div className={blogIndexStyles.featuredRibbon}>
                 <span>Featured</span>
@@ -99,8 +150,11 @@ const IndexPage = ({ pageContext }) => {
         ) : null
         return (
             <div className={blogIndexStyles.post}>
-                { featuredRibbon }
-                <Link to={`/blog/${node.slug}`} className={blogIndexStyles.postLink}>
+                {featuredRibbon}
+                <Link
+                    to={`/blog/${node.slug}`}
+                    className={blogIndexStyles.postLink}
+                >
                     <div className={blogIndexStyles.readTime}>
                         <FontAwesomeIcon icon={faClock} />
                         &nbsp;
@@ -119,7 +173,6 @@ const IndexPage = ({ pageContext }) => {
                         &nbsp;
                         {moment(node.publishedAt).format("MMMM Do, YYYY")}
                     </div>
-
                     <div className={categoryStyles.categories}>
                         {node.categories.map(category => (
                             <div
@@ -151,7 +204,13 @@ const IndexPage = ({ pageContext }) => {
 
             <div>
                 <div className={blogIndexStyles.posts}>
-                    {group.map(({ node }) => getPost(node))}
+                    {group.map(({ node }) => {
+                        if (node.postType === "codepen") {
+                            return getCodepen(node)
+                        } else {
+                            return getPost(node)
+                        }
+                    })}
                 </div>
 
                 <div className={blogIndexStyles.pageButtons}>

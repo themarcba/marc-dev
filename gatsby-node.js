@@ -53,12 +53,32 @@ module.exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
+
+            allCodepensJson {
+                edges {
+                    node {
+                        title
+                        slug
+                        publishedAt
+                        url
+                        categories
+                        postType
+                        description
+                    }
+                }
+            }
         }
     `)
 
     // Index page for blog posts, paginated
+    let published = [
+        ...res.data.allContentfulBlogPost.edges,
+        ...res.data.allCodepensJson.edges,
+    ].sort((a, b) => new Date(b.node.publishedAt) - new Date(a.node.publishedAt))
+
     createPaginatedPages({
-        edges: res.data.allContentfulBlogPost.edges,
+        // edges: res.data.allContentfulBlogPost.edges,
+        edges: published,
         createPage: createPage,
         pageTemplate: blogIndexTemplate,
         pageLength: 5,
@@ -86,6 +106,17 @@ module.exports.createPages = async ({ graphql, actions }) => {
                 url: node.url,
                 text: node.text,
                 timeout: node.timeout,
+            },
+        })
+    })
+
+    // Create pages for codepen redirects
+    res.data.allCodepensJson.edges.forEach(({ node }) => {
+        createPage({
+            component: redirectTemplate,
+            path: `/codepen/${node.slug}`,
+            context: {
+                url: node.url,
             },
         })
     })
