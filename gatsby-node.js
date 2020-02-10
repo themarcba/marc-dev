@@ -48,6 +48,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
             ) {
                 edges {
                     node {
+                        url
                         title
                         slug
                         categories
@@ -61,6 +62,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
                                 sizes
                                 src
                                 srcSet
+                            }
+                            fixed(width: 1200) {
+                                src
                             }
                         }
                     }
@@ -98,7 +102,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
         return new Date(b.node.publishedAt) - new Date(a.node.publishedAt)
     })
 
-    // Index page for blog posts, paginated
     createPaginatedPages({
         edges: published,
         createPage: createPage,
@@ -115,6 +118,47 @@ module.exports.createPages = async ({ graphql, actions }) => {
             path: `/blog/${node.slug}`,
             context: {
                 slug: node.slug,
+            },
+        })
+    })
+
+    // Create pages for blog posts
+    res.data.allContentfulCodepenPost.edges.forEach(({ node }) => {
+        createPage({
+            component: redirectTemplate,
+            path: `/codepen/${node.slug}`,
+            context: {
+                url: node.url,
+                text: "You are being redirected to Codepen...",
+                coverImageUrl: node.coverImage.fixed.src,
+                socialCardMeta: [
+                    { name: "twitter:card", content: "summary_large_image" },
+                    { name: "twitter:site", content: "@_marcba" },
+                    {
+                        name: "twitter:title",
+                        content: node.title,
+                    },
+                    {
+                        name: "og:title",
+                        content: node.title,
+                    },
+                    {
+                        name: "twitter:description",
+                        content: node.description.description,
+                    },
+                    {
+                        name: "og:description",
+                        content: node.description.description,
+                    },
+                    {
+                        name: "twitter:image",
+                        content: node.coverImage.fixed.src,
+                    },
+                    {
+                        name: "og:image",
+                        content: node.coverImage.fixed.src,
+                    },
+                ],
             },
         })
     })

@@ -31,7 +31,7 @@ const Head = ({ title, socialCardMeta, canonicalUrl, path }) => {
             },
             {
                 name: "twitter:image",
-                content: "https://marc.dev/images/socialCard.jpg",
+                content: "https://marc.dev/images/SocialCard.jpg",
             },
             {
                 name: "og:title",
@@ -44,7 +44,7 @@ const Head = ({ title, socialCardMeta, canonicalUrl, path }) => {
             },
             {
                 name: "og:image",
-                content: "https://marc.dev/images/socialCard.jpg",
+                content: "https://marc.dev/images/SocialCard.jpg",
             },
         ]
     }

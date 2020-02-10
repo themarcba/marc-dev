@@ -14,7 +14,8 @@
         @include category();
     }
 }
-.category-javascript, .category-es6 {
+.category-javascript,
+.category-es6 {
     // background: #f7df1e !important;
     color: #ead630 !important;
 }
@@ -52,7 +53,7 @@
 }
 
 .category-html {
-    color: #FFA500 !important;
+    color: #ffa500 !important;
 }
 
 .category-codepen {

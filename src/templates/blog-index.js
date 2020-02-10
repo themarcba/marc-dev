@@ -135,7 +135,7 @@ const IndexPage = ({ pageContext }) => {
                     </div>
 
                     <Link
-                        to={`/blog/${node.slug}`}
+                        to={`/codepen/${node.slug}`}
                         className={blogIndexStyles.postLink}
                     >
                         <h2>{node.title}</h2>
@@ -176,7 +176,6 @@ const IndexPage = ({ pageContext }) => {
                         &nbsp;
                         {moment(node.publishedAt).format("MMMM Do, YYYY")}
                     </div>
-
                     <div className={categoryStyles.categories}>
                         {node.categories.map(category => (
                             <div
@@ -203,9 +202,38 @@ const IndexPage = ({ pageContext }) => {
         )
     }
 
+    const socialCardMeta = [
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@_marcba" },
+        {
+            name: "twitter:title",
+            content: 'Web Developer Blog | by Marc Backes',
+        },
+        {
+            name: "og:title",
+            content: 'Web Developer Blog | by Marc Backes',
+        },
+        {
+            name: "twitter:description",
+            content: 'Tech blog about web development. JavaScript, Frontend, Backend & more',
+        },
+        {
+            name: "og:description",
+            content: 'Tech blog about web development. JavaScript, Frontend, Backend & more',
+        },
+        {
+            name: "twitter:image",
+            content: 'https://marc.dev/images/SocialCardBlog.jpg',
+        },
+        {
+            name: "og:image",
+            content: 'https://marc.dev/images/SocialCardBlog.jpg',
+        },
+    ]
+
     return (
         <Layout>
-            <Head title="Blog" />
+            <Head title="Blog" socialCardMeta={socialCardMeta} />
 
             <div>
                 <div className={blogIndexStyles.posts}>

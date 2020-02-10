@@ -106,14 +106,28 @@ const Blog = props => {
                 content: props.data.contentfulBlogPost.title,
             },
             {
+                name: "og:title",
+                content: props.data.contentfulBlogPost.title,
+            },
+            {
                 name: "twitter:description",
                 content:
                     props.data.contentfulBlogPost.excerpt.childMarkdownRemark
                         .rawMarkdownBody,
             },
             {
+                name: "og:description",
+                content:
+                    props.data.contentfulBlogPost.excerpt.childMarkdownRemark
+                        .rawMarkdownBody,
+            },
+            {
                 name: "twitter:image",
-                content: "https://marc.dev/images/socialCard.jpg",
+                content: "https://marc.dev/images/SocialCard.jpg",
+            },
+            {
+                name: "og:image",
+                content: "https://marc.dev/images/SocialCard.jpg",
             },
         ]
     }
