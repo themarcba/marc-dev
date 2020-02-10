@@ -21,7 +21,13 @@ import {
     faTrain,
     faBullhorn,
 } from "@fortawesome/free-solid-svg-icons"
-import { faNodeJs, faJs, faHtml5 } from "@fortawesome/free-brands-svg-icons"
+import {
+    faNodeJs,
+    faJs,
+    faHtml5,
+    faCss3,
+    faCodepen,
+} from "@fortawesome/free-brands-svg-icons"
 
 const NavLink = props => {
     if (!props.test) {
@@ -43,6 +49,9 @@ export const CategoryIcon = ({ category }) => {
             break
         case "javascript":
             icon = faJs
+            break
+        case "css":
+            icon = faCss3
             break
         case "es6":
             icon = faJs
@@ -71,6 +80,9 @@ export const CategoryIcon = ({ category }) => {
         case "announcement":
             icon = faBullhorn
             break
+        case "codepen":
+            icon = faCodepen
+            break
         default:
             break
     }
@@ -91,6 +103,48 @@ const IndexPage = ({ pageContext }) => {
         ) : (
             ""
         )
+
+    const getCodepen = node => {
+        return (
+            <div className={blogIndexStyles.post}>
+                <Link
+                    to={`/codepen/${node.slug}`}
+                    className={blogIndexStyles.postLink}
+                >
+                    {getCoverImage(node)}
+                </Link>
+                <div className={blogIndexStyles.postContent}>
+                    <div className={blogIndexStyles.postDate}>
+                        <FontAwesomeIcon icon={faCalendar} />
+                        &nbsp;
+                        {moment(node.publishedAt).format("MMMM Do, YYYY")}
+                    </div>
+
+                    <div className={categoryStyles.categories}>
+                        {node.categories.map(category => (
+                            <div
+                                className={
+                                    categoryStyles[
+                                        camelCase(`category-${category}`)
+                                    ]
+                                }
+                            >
+                                #{category} <CategoryIcon category={category} />
+                            </div>
+                        ))}
+                    </div>
+
+                    <Link
+                        to={`/blog/${node.slug}`}
+                        className={blogIndexStyles.postLink}
+                    >
+                        <h2>{node.title}</h2>
+                    </Link>
+                    <p>{node.description.description}</p>
+                </div>
+            </div>
+        )
+    }
     const getPost = node => {
         const featuredRibbon = node.isFeatured ? (
             <div className={blogIndexStyles.featuredRibbon}>
@@ -99,8 +153,11 @@ const IndexPage = ({ pageContext }) => {
         ) : null
         return (
             <div className={blogIndexStyles.post}>
-                { featuredRibbon }
-                <Link to={`/blog/${node.slug}`} className={blogIndexStyles.postLink}>
+                {featuredRibbon}
+                <Link
+                    to={`/blog/${node.slug}`}
+                    className={blogIndexStyles.postLink}
+                >
                     <div className={blogIndexStyles.readTime}>
                         <FontAwesomeIcon icon={faClock} />
                         &nbsp;
@@ -133,6 +190,7 @@ const IndexPage = ({ pageContext }) => {
                             </div>
                         ))}
                     </div>
+
                     <Link
                         to={`/blog/${node.slug}`}
                         className={blogIndexStyles.postLink}
@@ -151,7 +209,28 @@ const IndexPage = ({ pageContext }) => {
 
             <div>
                 <div className={blogIndexStyles.posts}>
-                    {group.map(({ node }) => getPost(node))}
+                    <div className={blogIndexStyles.column}>
+                        {group.map(({ node }, index) => {
+                            if (index % 2 === 0) {
+                                if (node.postType === "blog") {
+                                    return getPost(node)
+                                } else if (node.postType === "codepen") {
+                                    return getCodepen(node)
+                                }
+                            }
+                        })}
+                    </div>
+                    <div className={blogIndexStyles.column}>
+                        {group.map(({ node }, index) => {
+                            if (index % 2 !== 0) {
+                                if (node.postType === "blog") {
+                                    return getPost(node)
+                                } else if (node.postType === "codepen") {
+                                    return getCodepen(node)
+                                }
+                            }
+                        })}
+                    </div>
                 </div>
 
                 <div className={blogIndexStyles.pageButtons}>

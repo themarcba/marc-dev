@@ -43,6 +43,30 @@ module.exports.createPages = async ({ graphql, actions }) => {
                 }
             }
 
+            allContentfulCodepenPost(
+                sort: { fields: publishedAt, order: DESC }
+            ) {
+                edges {
+                    node {
+                        title
+                        slug
+                        categories
+                        publishedAt
+                        description {
+                            description
+                        }
+                        coverImage {
+                            title
+                            fluid {
+                                sizes
+                                src
+                                srcSet
+                            }
+                        }
+                    }
+                }
+            }
+
             allRedirectsJson {
                 edges {
                     node {
@@ -56,12 +80,30 @@ module.exports.createPages = async ({ graphql, actions }) => {
         }
     `)
 
+    // Manipulate blog posts
+    res.data.allContentfulBlogPost.edges.forEach(edge => {
+        edge.node.postType = "blog"
+    })
+
+    // Manipulate codepen posts
+    res.data.allContentfulCodepenPost.edges.forEach(edge => {
+        edge.node.postType = "codepen"
+        edge.node.categories.unshift("codepen")
+    })
+
+    const published = [
+        ...res.data.allContentfulBlogPost.edges,
+        ...res.data.allContentfulCodepenPost.edges,
+    ].sort((a, b) => {
+        return new Date(b.node.publishedAt) - new Date(a.node.publishedAt)
+    })
+
     // Index page for blog posts, paginated
     createPaginatedPages({
-        edges: res.data.allContentfulBlogPost.edges,
+        edges: published,
         createPage: createPage,
         pageTemplate: blogIndexTemplate,
-        pageLength: 5,
+        pageLength: 6,
         pathPrefix: "/blog",
         context: {},
     })
