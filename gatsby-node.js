@@ -152,11 +152,11 @@ module.exports.createPages = async ({ graphql, actions }) => {
                     },
                     {
                         name: "twitter:image",
-                        content: node.coverImage.fixed.src,
+                        content: encodeURIComponent(node.coverImage.fixed.src),
                     },
                     {
                         name: "og:image",
-                        content: node.coverImage.fixed.src,
+                        content: encodeURIComponent(node.coverImage.fixed.src),
                     },
                 ],
             },

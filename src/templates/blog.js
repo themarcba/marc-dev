@@ -80,7 +80,7 @@ const Blog = props => {
             },
             {
                 name: "twitter:image",
-                content: `https:${props.data.contentfulBlogPost.coverImage.fixed.src}`,
+                content: encodeURIComponent(`https:${props.data.contentfulBlogPost.coverImage.fixed.src}`),
             },
             {
                 name: "og:title",
@@ -94,7 +94,7 @@ const Blog = props => {
             },
             {
                 name: "og:image",
-                content: `https:${props.data.contentfulBlogPost.coverImage.fixed.src}`,
+                content: encodeURIComponent(`https:${props.data.contentfulBlogPost.coverImage.fixed.src}`),
             },
         ]
     } else {
