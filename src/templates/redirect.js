@@ -6,7 +6,7 @@ class Redirect extends React.Component {
     componentDidMount() {
         const timeout = this.props.pageContext.timeout || 1000
         setTimeout(() => {
-            // window.location = this.props.pageContext.url
+            window.location = this.props.pageContext.url
         }, timeout)
     }
     render() {
