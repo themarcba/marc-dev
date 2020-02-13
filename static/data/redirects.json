@@ -16,6 +16,12 @@
         "url": "https://calendly.com/marcba/quick"
     },
     {
+        "path": "/coffee",
+        "url": "https://ko-fi.com/themarcba",
+        "text": "Want to buy me coffee? ☕️❤️",
+        "timeout": 5000
+    },
+    {
         "path": "/wp-admin",
         "url": "https://media.giphy.com/media/kFgzrTt798d2w/source.gif",
         "text": "Nice try...",
