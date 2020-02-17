@@ -18,8 +18,8 @@
     {
         "path": "/coffee",
         "url": "https://ko-fi.com/themarcba",
-        "text": "Want to buy me coffee? ☕️❤️",
-        "timeout": 5000
+        "text": "Want to buy me coffee? ☕️❤️ ...",
+        "timeout": 2000
     },
     {
         "path": "/wp-admin",

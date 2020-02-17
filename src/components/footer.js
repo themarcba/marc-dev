@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import footerStyles from "./footer.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHeart, faCode } from "@fortawesome/free-solid-svg-icons"
+import { faHeart, faCode, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons"
 import {
     faTwitter,
     faGithub,
@@ -62,6 +62,9 @@ const Footer = () => {
 
                 <a href="https://www.linkedin.com/in/themarcba">
                     <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+                <a href="https://ko-fi.com/themarcba">
+                    <FontAwesomeIcon icon={faHandHoldingHeart} />
                 </a>
             </p>
             <p className={footerStyles.small}>
