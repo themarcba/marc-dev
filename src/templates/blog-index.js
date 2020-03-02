@@ -27,6 +27,7 @@ import {
     faHtml5,
     faCss3,
     faCodepen,
+    faVuejs,
 } from "@fortawesome/free-brands-svg-icons"
 
 const NavLink = props => {
@@ -49,6 +50,9 @@ export const CategoryIcon = ({ category }) => {
             break
         case "javascript":
             icon = faJs
+            break
+        case "vue":
+            icon = faVuejs
             break
         case "css":
             icon = faCss3
@@ -207,27 +211,29 @@ const IndexPage = ({ pageContext }) => {
         { name: "twitter:site", content: "@_marcba" },
         {
             name: "twitter:title",
-            content: 'Web Developer Blog | by Marc Backes',
+            content: "Web Developer Blog | by Marc Backes",
         },
         {
             name: "og:title",
-            content: 'Web Developer Blog | by Marc Backes',
+            content: "Web Developer Blog | by Marc Backes",
         },
         {
             name: "twitter:description",
-            content: 'Tech blog about web development. JavaScript, Frontend, Backend & more',
+            content:
+                "Tech blog about web development. JavaScript, Frontend, Backend & more",
         },
         {
             name: "og:description",
-            content: 'Tech blog about web development. JavaScript, Frontend, Backend & more',
+            content:
+                "Tech blog about web development. JavaScript, Frontend, Backend & more",
         },
         {
             name: "twitter:image",
-            content: 'https://marc.dev/images/SocialCardBlog.jpg',
+            content: "https://marc.dev/images/SocialCardBlog.jpg",
         },
         {
             name: "og:image",
-            content: 'https://marc.dev/images/SocialCardBlog.jpg',
+            content: "https://marc.dev/images/SocialCardBlog.jpg",
         },
     ]
 
