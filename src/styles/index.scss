@@ -759,6 +759,7 @@ body {
     --secondaryBgHeavy: #fff;
     --textNormal: #222;
     --lightText: rgba(0, 0, 0, 0.45);
+    --slightlyLighterText: rgba(0, 0, 0, 0.8);
     --lighterText: rgba(0, 0, 0, 0.35);
     --textLink: #691375;
     background-color: var(--bg);
@@ -773,6 +774,7 @@ body.dark {
     --textNormal: rgba(255, 255, 255, 0.88);
     --lightText: rgba(255, 255, 255, 0.5);
     --lighterText: rgba(255, 255, 255, 0.35);
+    --slightlyLighterText: rgba(255, 255, 255, 0.6);
     --textLink: rgb(29, 161, 242);
 }
 

@@ -216,7 +216,14 @@
     }
 
     p {
-        color: var(--textNormal);
+        color: var(--slightlyLighterText);
+        strong, em {
+            color: var(--textNormal);
+        }
+    }
+
+    ol, ul {
+        color: var(--slightlyLighterText);
     }
 
     code {
