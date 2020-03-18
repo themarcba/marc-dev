@@ -9,7 +9,7 @@ import categoryStyles from "../pages/blog-categories.module.scss"
 import Head from "../components/head"
 import pluralize from "pluralize"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCalendar, faClock } from "@fortawesome/free-regular-svg-icons"
+import { faCalendar, faClock, faLightbulb } from "@fortawesome/free-regular-svg-icons"
 import camelCase from "camelcase"
 import {
     faChevronRight,
@@ -86,6 +86,9 @@ export const CategoryIcon = ({ category }) => {
             break
         case "codepen":
             icon = faCodepen
+            break
+        case "tip":
+            icon = faLightbulb
             break
         default:
             break
