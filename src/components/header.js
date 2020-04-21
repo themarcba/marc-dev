@@ -68,9 +68,10 @@ const Header = () => {
             </div>
             <h1>
                 <Link className={headerStyles.title} to="/">
-                    {metadata.hostname}
+                    {/* {metadata.hostname} */}
+                    <img style={{marginLeft:'-3.5rem'}} src="/images/logo.png" alt="" srcset=""/>
                 </Link>
-                {location}
+                {/* {location} */}
             </h1>
 
             <label className={headerStyles.menu} data-menu-toggle for="hamburger-menu-toggle">
@@ -91,6 +92,7 @@ const Header = () => {
                     <Link
                         className={headerStyles.navItem}
                         activeClassName={headerStyles.activeNavItem}
+                        partiallyActive={true}
                         to="/blog"
                     >
                         Blog

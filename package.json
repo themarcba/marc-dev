@@ -29,6 +29,7 @@
         "gatsby-plugin-client-side-redirect": "0.0.2",
         "gatsby-plugin-dark-mode": "^1.1.0",
         "gatsby-plugin-fathom": "^1.1.0",
+        "gatsby-plugin-feed": "^2.4.1",
         "gatsby-plugin-google-fonts": "^1.0.1",
         "gatsby-plugin-html-attributes": "^1.0.5",
         "gatsby-plugin-mailchimp": "^5.1.2",

@@ -16,6 +16,7 @@ module.exports = {
         author: "Marc Backes",
         version: "0.2.1",
         hostname: process.env.HOSTNAME,
+        siteUrl: "http://localhost:8000",
     },
     plugins: [
         `gatsby-plugin-client-side-redirect`,
@@ -57,13 +58,6 @@ module.exports = {
             },
         },
 
-        {
-            resolve: 'gatsby-plugin-mailchimp',
-            options: {
-                endpoint: 'https://dev.us4.list-manage.com/subscribe/post?u=8e6f0473494c027d2e284e73c&id=71a2542483', // add your MC list endpoint here; see instructions below
-            },
-        },
-
         // Dark mode button
         "gatsby-plugin-dark-mode",
 
@@ -73,8 +67,12 @@ module.exports = {
             resolve: "gatsby-source-contentful",
             options: {
                 spaceId: process.env.CONTENTFUL_SPACE_ID,
-                accessToken: process.env.PREVIEW ? process.env.CONTENTFUL_PREVIEW_TOKEN : process.env.CONTENTFUL_ACCESS_TOKEN,
-                host: process.env.PREVIEW ? `preview.contentful.com` : undefined,
+                accessToken: process.env.PREVIEW
+                    ? process.env.CONTENTFUL_PREVIEW_TOKEN
+                    : process.env.CONTENTFUL_ACCESS_TOKEN,
+                host: process.env.PREVIEW
+                    ? `preview.contentful.com`
+                    : undefined,
             },
         },
 
