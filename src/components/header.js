@@ -69,7 +69,7 @@ const Header = () => {
             <h1>
                 <Link className={headerStyles.title} to="/">
                     {/* {metadata.hostname} */}
-                    <img style={{marginLeft:'-3.5rem'}} src="/images/logo.png" alt="" srcset=""/>
+                    <img className={headerStyles.logo} src="/images/logo.png" alt="" srcset=""/>
                 </Link>
                 {/* {location} */}
             </h1>

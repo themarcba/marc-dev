@@ -38,6 +38,16 @@
     }
 }
 
+.logo {
+    width: 80%;
+    max-width: 400px;
+    margin-left: -50px;
+    @media screen and (max-width: 801px) {
+        margin-left: 0;
+    }
+
+}
+
 .title-after {
     color: var(--lighterText);
     margin-left: 0.5rem;
