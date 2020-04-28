@@ -1,3 +1,20 @@
-/redirect           https://www.youtube.com/watch?v=dQw4w9WgXcQ
-/vdom         /blog/vue-from-scratch-part-3
+# Rick Rolls 
+/wp-admin           https://www.youtube.com/watch?v=dQw4w9WgXcQ
+/phpmyadmin         https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+# Blog
+/vdom               /blog/vue-from-scratch-part-3
 /reactivity         /blog/vue-from-scratch-part-4
+
+# Sites
+/github             https://github.com/themarcba
+/twitter            https://twitter.com/_marcba
+/dev                https://dev.to/_marcba
+/linkedin           https://www.linkedin.com/in/themarcba
+/meet               https://calendly.com/marcba/quick
+/coffee             https://ko-fi.com/themarcba
+
+# Payments
+/paypal             https://www.paypal.me/themarcba
+/pay                https://www.paypal.me/themarcba
+/btc                https://gist.github.com/themarcba/1b96e17f696ab6062bd4b2675c9f9b9f
