@@ -27,8 +27,6 @@
 
 .container {
     h1 {
-        border-top: solid red 1px;
-
         color: var(--lighterText);
 
         @media screen and (max-width: 500px) {
