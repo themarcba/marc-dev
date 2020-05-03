@@ -70,17 +70,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
-
-            allRedirectsJson {
-                edges {
-                    node {
-                        path
-                        url
-                        text
-                        timeout
-                    }
-                }
-            }
         }
     `)
 
@@ -159,19 +148,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
                         content: node.coverImage.fixed.src,
                     },
                 ],
-            },
-        })
-    })
-
-    // Create pages for redirects
-    res.data.allRedirectsJson.edges.forEach(({ node }) => {
-        createPage({
-            component: redirectTemplate,
-            path: node.path,
-            context: {
-                url: node.url,
-                text: node.text,
-                timeout: node.timeout,
             },
         })
     })
