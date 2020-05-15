@@ -98,7 +98,9 @@ const UsesPage = props => {
                     <tr>
                         <td>Todo App</td>
                         <td>
-                            <a href="https://any.do/">Any.do</a>
+                            <a href="https://todo.microsoft.com/tasks">
+                                Microsoft To Do
+                            </a>
                         </td>
                     </tr>
                     <tr>
