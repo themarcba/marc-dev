@@ -103,7 +103,9 @@ const UsesPage = props => {
                     </tr>
                     <tr>
                         <td>Window Management</td>
-                        <td><a href="https://mizage.com/divvy/">Divvy</a></td>
+                        <td>
+                            <a href="https://mizage.com/divvy/">Divvy</a>
+                        </td>
                     </tr>
                 </table>
 
@@ -131,7 +133,7 @@ const UsesPage = props => {
                         </td>
                     </tr>
                     <tr>
-                        <td>Email provide</td>
+                        <td>Email provider</td>
                         <td>
                             <a href="https://gsuite.google.com/">GSuite</a>
                         </td>
@@ -159,8 +161,8 @@ const UsesPage = props => {
                     <tr>
                         <td>Laptop stand</td>
                         <td>
-                            <a href="https://www.amazon.co.uk/kalibri-Wooden-Laptop-Stand-Vertical/dp/B01JRUR5B0">
-                                kalibri Wooden Laptop Stand
+                            <a href="https://www.amazon.com/SAMDI-Notebook-Cooling-Computer-Chromebook/dp/B013ONA8VK?th=1">
+                                SAMDI Laptop Stand Wood, Walnut
                             </a>
                         </td>
                     </tr>
@@ -175,9 +177,8 @@ const UsesPage = props => {
                     <tr>
                         <td>USB-C Docking Station</td>
                         <td>
-                            <a href="https://i-tec.cz/en/produkt/c31dualdockpd-2/">
-                                i-tec USB-C Dual Display MST Docking Station +
-                                Power Delivery 60W
+                            <a href="https://www.wavlink.com/en_us/product/WL-UG69PD2.html/">
+                                WavLink USB-C Dual 4K Docking Station
                             </a>
                         </td>
                     </tr>
