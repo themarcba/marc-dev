@@ -1,23 +1,27 @@
 # Rick Rolls 
-/wp-admin           https://www.youtube.com/watch?v=dQw4w9WgXcQ
-/phpmyadmin         https://www.youtube.com/watch?v=dQw4w9WgXcQ
+/wp-admin               https://www.youtube.com/watch?v=dQw4w9WgXcQ
+/phpmyadmin             https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 # Blog
-/vdom               /blog/vue-from-scratch-part-3
-/reactivity         /blog/vue-from-scratch-part-4
-/wfh                /blog/working-from-home
+/vdom                   /blog/vue-from-scratch-part-3
+/reactivity             /blog/vue-from-scratch-part-4
+/wfh                    /blog/working-from-home
 
 # Sites
-/github             https://github.com/themarcba
-/twitter            https://twitter.com/_marcba
-/dev                https://dev.to/_marcba
-/linkedin           https://www.linkedin.com/in/themarcba
-/meet               https://calendly.com/marcba/quick
-/coffee             https://ko-fi.com/themarcba
-/youtube            https://www.youtube.com/channel/UC38jZDIKCdoB4H-XaDarrkA
-/yt                 https://www.youtube.com/channel/UC38jZDIKCdoB4H-XaDarrkA
+/github                 https://github.com/themarcba
+/twitter                https://twitter.com/_marcba
+/dev                    https://dev.to/_marcba
+/linkedin               https://www.linkedin.com/in/themarcba
+/meet                   https://calendly.com/marcba/quick
+/coffee                 https://ko-fi.com/themarcba
+/youtube                https://www.youtube.com/channel/UC38jZDIKCdoB4H-XaDarrkA
+/yt                     https://www.youtube.com/channel/UC38jZDIKCdoB4H-XaDarrkA
 
 # Payments
-/paypal             https://www.paypal.me/themarcba
-/pay                https://www.paypal.me/themarcba
-/btc                https://gist.github.com/themarcba/1b96e17f696ab6062bd4b2675c9f9b9f
+/paypal                 https://www.paypal.me/themarcba
+/pay                    https://www.paypal.me/themarcba
+/btc                    https://gist.github.com/themarcba/1b96e17f696ab6062bd4b2675c9f9b9f
+
+# Gists
+/gist/vue-dependency    https://gist.github.com/themarcba/f4d15000999f8921c584b6f78bff2867
+/gist/vue-reactive      https://gist.github.com/themarcba/618264a12f277f10570c30759c592546
