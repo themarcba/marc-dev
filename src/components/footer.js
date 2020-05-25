@@ -9,6 +9,7 @@ import {
     faDev,
     faLinkedin,
     faCodepen,
+    faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
 
 const Footer = () => {
@@ -47,19 +48,18 @@ const Footer = () => {
                 <a href="https://www.twitter.com/_marcba">
                     <FontAwesomeIcon icon={faTwitter} />
                 </a>
-
+                <a href="https://www.youtube.com/channel/UC38jZDIKCdoB4H-XaDarrkA">
+                    <FontAwesomeIcon icon={faYoutube} />
+                </a>
                 <a href="https://github.com/themarcba">
                     <FontAwesomeIcon icon={faGithub} />
                 </a>
-
                 <a href="https://dev.to/_marcba">
                     <FontAwesomeIcon icon={faDev} />
                 </a>
-
                 <a href="https://codepen.io/_marcba">
                     <FontAwesomeIcon icon={faCodepen} />
                 </a>
-
                 <a href="https://www.linkedin.com/in/themarcba">
                     <FontAwesomeIcon icon={faLinkedin} />
                 </a>
