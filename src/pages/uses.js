@@ -106,7 +106,13 @@ const UsesPage = props => {
                     <tr>
                         <td>Window Management</td>
                         <td>
-                            <a href="https://mizage.com/divvy/">Divvy</a>
+                            <a href="https://www.spectacleapp.com/">Spectacle</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Video Editing</td>
+                        <td>
+                            <a href="https://www.telestream.net/screenflow">ScreenFlow</a>
                         </td>
                     </tr>
                 </table>
@@ -169,10 +175,18 @@ const UsesPage = props => {
                         </td>
                     </tr>
                     <tr>
-                        <td>External screen</td>
+                        <td>External screen #1</td>
                         <td>
                             <a href="https://www.lg.com/us/monitors/lg-34UM88-P-ultrawide-monitor">
                                 34" 21:9 UltraWide® QHD IPS LED
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>External screen #2</td>
+                        <td>
+                            <a href="https://www.benq.com/en-me/monitor/stylish/gw2480.html">
+                                23.8" BenQ GW2480
                             </a>
                         </td>
                     </tr>
@@ -189,6 +203,30 @@ const UsesPage = props => {
                         <td>
                             <a href="https://www.noblechairs.com/epic-series">
                                 Noblechairs Epic
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>External Microphone</td>
+                        <td>
+                            <a href="http://www.sudotack.com/Home/Products/detail/code/AMB1A04T">
+                                SUDOTRAK Cardioid Condenser Microphone
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Webcam</td>
+                        <td>
+                            <a href="https://www.logitech.com/en-us/product/brio">
+                                Logitech BRIO 4K
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Webcam holder & LED ring</td>
+                        <td>
+                            <a href="https://www.amazon.de/gp/product/B07GW6LZ6R">
+                                No-Name Webcam Light Holder
                             </a>
                         </td>
                     </tr>
