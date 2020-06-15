@@ -27,7 +27,7 @@ const Head = ({ title, socialCardMeta, canonicalUrl, path }) => {
             {
                 name: "twitter:description",
                 content:
-                    "Marc is a Full-Stack Web Developer based in Luxembourg 👨‍💻",
+                    "Full-Stack Web Developer based in Luxembourg | Vue.js, Node.js, Express.js, MongoDB & more",
             },
             {
                 name: "twitter:image",
@@ -40,7 +40,7 @@ const Head = ({ title, socialCardMeta, canonicalUrl, path }) => {
             {
                 name: "og:description",
                 content:
-                    "Marc is a Full-Stack Web Developer based in Luxembourg 👨‍💻",
+                    "Full-Stack Web Developer based in Luxembourg | Vue.js, Node.js, Express.js, MongoDB & more",
             },
             {
                 name: "og:image",
@@ -52,7 +52,7 @@ const Head = ({ title, socialCardMeta, canonicalUrl, path }) => {
     const meta = [
         {
             name: "description",
-            content: "Marc is a Full-Stack Web Developer based in Luxembourg",
+            content: "Full-Stack Web Developer based in Luxembourg | Vue.js, Node.js, Express.js, MongoDB & more",
         },
         ...socialCardMeta,
     ]
