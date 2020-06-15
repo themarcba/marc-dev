@@ -123,11 +123,11 @@ const Blog = props => {
             },
             {
                 name: "twitter:image",
-                content: "https://marc.dev/images/social_v2_blog.jpg",
+                content: "https://marc.dev/images/social_v3_blog.jpg",
             },
             {
                 name: "og:image",
-                content: "https://marc.dev/images/social_v2_blog.jpg",
+                content: "https://marc.dev/images/social_v3_blog.jpg",
             },
         ]
     }
