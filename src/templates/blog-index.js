@@ -232,11 +232,11 @@ const IndexPage = ({ pageContext }) => {
         },
         {
             name: "twitter:image",
-            content: "https://marc.dev/images/SocialCardBlog.jpg",
+            content: "https://marc.dev/images/social_v2_blog.jpg",
         },
         {
             name: "og:image",
-            content: "https://marc.dev/images/SocialCardBlog.jpg",
+            content: "https://marc.dev/images/social_v2_blog.jpg",
         },
     ]
 
