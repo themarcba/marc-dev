@@ -39,10 +39,6 @@ const Skill = ({ name, file, progress }) => {
         <div className={skillStyles.image}>
             <div className={skillStyles.details}>
                 <div>{name}</div>
-                <div className={skillStyles.progressBar}>
-                    <div className={skillStyles.progress} style={{width: `${progress}%`}}></div>
-                </div>
-                <span className={skillStyles.progressNumber}>{progress}%</span>
             </div>
             <img src={imageNode.fixed.src} alt={`Logo for ${name}`}/>
         </div>
