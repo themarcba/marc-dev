@@ -193,8 +193,8 @@ const UsesPage = props => {
                     <tr>
                         <td>USB-C Docking Station</td>
                         <td>
-                            <a href="https://www.wavlink.com/en_us/product/WL-UG69PD2.html/">
-                                WavLink USB-C Dual 4K Docking Station
+                            <a href="https://www.caldigit.com/usb-c-pro-dock/">
+                                CalDigit USB-C Pro Dock
                             </a>
                         </td>
                     </tr>
