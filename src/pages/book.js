@@ -79,7 +79,7 @@ const BookIndex = props => {
                 <h1 style={{ fontSize: "5rem" }}>YOU CAN'T</h1>
                 <p>
                     I'm sorry to be the one to tell you this, but you{" "}
-                    <strong>CAN'T</strong> decome a developer in 10 days. You
+                    <strong>CAN'T</strong> become a developer in 10 days. You
                     need to go step by step. Learning how to code takes time,
                     and there are <strong>NO</strong> shortcuts.
                 </p>
