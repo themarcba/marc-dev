@@ -11,6 +11,7 @@ import Head from "../components/head"
 import { Link } from "gatsby"
 import camelCase from "camelcase"
 import { CategoryIcon } from "../templates/blog-index"
+import getShareImage from "@jlengstorf/get-share-image"
 
 export const query = graphql`
     query($slug: String!) {
@@ -56,6 +57,20 @@ export const query = graphql`
 const Blog = props => {
     let coverImage
     let socialCardMeta
+
+    const socialImageUrl = getShareImage({
+        title: props.data.contentfulBlogPost.title,
+        cloudName: 'marcba',
+        imagePublicID: 'marc.dev/social_card_blank',
+        font: 'Work Sans',
+        titleBottomOffset: 0,
+        titleFont: 'Work Sans',
+        titleColor: '333',
+        titleGravity: 'west',
+        titleFontSize: 70,
+        titleExtraConfig: '_bold',
+    })
+    
     if (props.data.contentfulBlogPost.coverImage) {
         coverImage = (
             <div>
@@ -80,7 +95,7 @@ const Blog = props => {
             },
             {
                 name: "twitter:image",
-                content: `https:${props.data.contentfulBlogPost.coverImage.fixed.src}`,
+                content: socialImageUrl,
             },
             {
                 name: "og:title",
@@ -94,7 +109,7 @@ const Blog = props => {
             },
             {
                 name: "og:image",
-                content: `https:${props.data.contentfulBlogPost.coverImage.fixed.src}`,
+                content: socialImageUrl,
             },
         ]
     } else {

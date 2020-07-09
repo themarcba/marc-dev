@@ -21,6 +21,7 @@
         "@fortawesome/free-regular-svg-icons": "^5.11.2",
         "@fortawesome/free-solid-svg-icons": "^5.11.2",
         "@fortawesome/react-fontawesome": "^0.1.7",
+        "@jlengstorf/get-share-image": "^0.7.1",
         "camelcase": "^5.3.1",
         "gatsby": "^2.18.14",
         "gatsby-image": "^2.2.34",
