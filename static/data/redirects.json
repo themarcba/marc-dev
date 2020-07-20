@@ -1,7 +1,7 @@
 [
     { "path": "/github", "url": "https://github.com/themarcba" },
-    { "path": "/twitter", "url": "https://twitter.com/_marcba" },
-    { "path": "/dev", "url": "https://dev.to/_marcba" },
+    { "path": "/twitter", "url": "https://twitter.com/themarcba" },
+    { "path": "/dev", "url": "https://dev.to/themarcba" },
     { "path": "/paypal", "url": "https://www.paypal.me/themarcba" },
     {
         "path": "/linkedin",

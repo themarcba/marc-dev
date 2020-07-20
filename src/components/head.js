@@ -19,7 +19,7 @@ const Head = ({ title, socialCardMeta, canonicalUrl, path }) => {
     if (!socialCardMeta) {
         socialCardMeta = [
             { name: "twitter:card", content: "summary_large_image" },
-            { name: "twitter:site", content: "@_marcba" },
+            { name: "twitter:site", content: "@the" },
             {
                 name: "twitter:title",
                 content: title,

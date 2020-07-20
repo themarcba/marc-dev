@@ -211,7 +211,7 @@ const IndexPage = ({ pageContext }) => {
 
     const socialCardMeta = [
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:site", content: "@_marcba" },
+        { name: "twitter:site", content: "@themarcba" },
         {
             name: "twitter:title",
             content: "Web Developer Blog | by Marc Backes",

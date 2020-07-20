@@ -82,7 +82,7 @@ const Blog = props => {
         )
         socialCardMeta = [
             { name: "twitter:card", content: "summary_large_image" },
-            { name: "twitter:site", content: "@_marcba" },
+            { name: "twitter:site", content: "@themarcba" },
             {
                 name: "twitter:title",
                 content: props.data.contentfulBlogPost.title,
@@ -115,7 +115,7 @@ const Blog = props => {
     } else {
         socialCardMeta = [
             { name: "twitter:card", content: "summary_large_image" },
-            { name: "twitter:site", content: "@_marcba" },
+            { name: "twitter:site", content: "@themarcba" },
             {
                 name: "twitter:title",
                 content: props.data.contentfulBlogPost.title,

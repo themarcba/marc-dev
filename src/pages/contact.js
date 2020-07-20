@@ -21,7 +21,7 @@ const ContactPage = (props) => {
             <p>
                 My preferred way of contact is via&nbsp;
                 <a
-                    href="https://www.twitter.com/_marcba"
+                    href="https://www.twitter.com/themarcba"
                     class={mainStyle.link}
                 >
                     Twitter <FontAwesomeIcon icon={faTwitter} />
@@ -37,7 +37,7 @@ const ContactPage = (props) => {
             </p>
             <div className={contactStyle.icons}>
                 <a
-                    href="https://www.twitter.com/_marcba"
+                    href="https://www.twitter.com/themarcba"
                     class={contactStyle.iconLink}
                 >
                     <FontAwesomeIcon icon={faTwitter} />
@@ -50,7 +50,7 @@ const ContactPage = (props) => {
                     <FontAwesomeIcon icon={faGithub} />
                 </a>
 
-                <a href="https://dev.to/_marcba" class={contactStyle.iconLink}>
+                <a href="https://dev.to/themarcba" class={contactStyle.iconLink}>
                     <FontAwesomeIcon icon={faDev} />
                 </a>
 

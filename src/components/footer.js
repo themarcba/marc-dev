@@ -45,7 +45,7 @@ const Footer = () => {
                 </a>
             </p>
             <p className={footerStyles.social}>
-                <a href="https://www.twitter.com/_marcba">
+                <a href="https://www.twitter.com/themarcba">
                     <FontAwesomeIcon icon={faTwitter} />
                 </a>
                 <a href="https://www.youtube.com/channel/UC38jZDIKCdoB4H-XaDarrkA">
@@ -54,7 +54,7 @@ const Footer = () => {
                 <a href="https://github.com/themarcba">
                     <FontAwesomeIcon icon={faGithub} />
                 </a>
-                <a href="https://dev.to/_marcba">
+                <a href="https://dev.to/themarcba">
                     <FontAwesomeIcon icon={faDev} />
                 </a>
                 <a href="https://codepen.io/_marcba">
