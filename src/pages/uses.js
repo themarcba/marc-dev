@@ -169,8 +169,7 @@ const UsesPage = props => {
                     <tr>
                         <td>Laptop</td>
                         <td>
-                            Macbook Pro 16", i9, 64GB. This is all I work on. No
-                            desktop computer.
+                            Macbook Pro 16", i9, 64GB
                         </td>
                     </tr>
                     <tr>
