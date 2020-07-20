@@ -27,8 +27,8 @@ const UsesPage = props => {
                     <tr>
                         <td>Code Editor Theme</td>
                         <td>
-                            <a href="https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode">
-                                Synthwave '84 by Robb Owen
+                            <a href="https://marketplace.visualstudio.com/items?itemName=teabyii.ayu">
+                                Ayu Mirage
                             </a>
                         </td>
                     </tr>
@@ -46,6 +46,9 @@ const UsesPage = props => {
                             Usually the VS Code integrated terminal during
                             coding, for other uses,
                             <a href="https://iterm2.com/">iTerm2</a> with ZSH.
+                            Also, using the [Ayu
+                            Mirage](https://github.com/hwyncho/ayu-iTerm/blob/master/ayu%20Mirage.itermcolors)
+                            color scheme.
                         </td>
                     </tr>
                 </table>
@@ -106,13 +109,17 @@ const UsesPage = props => {
                     <tr>
                         <td>Window Management</td>
                         <td>
-                            <a href="https://www.spectacleapp.com/">Spectacle</a>
+                            <a href="https://www.spectacleapp.com/">
+                                Spectacle
+                            </a>
                         </td>
                     </tr>
                     <tr>
                         <td>Video Editing</td>
                         <td>
-                            <a href="https://www.telestream.net/screenflow">ScreenFlow</a>
+                            <a href="https://www.telestream.net/screenflow">
+                                ScreenFlow
+                            </a>
                         </td>
                     </tr>
                 </table>
