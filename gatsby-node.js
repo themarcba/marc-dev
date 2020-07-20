@@ -122,7 +122,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
                 coverImageUrl: node.coverImage.fixed.src,
                 socialCardMeta: [
                     { name: "twitter:card", content: "summary_large_image" },
-                    { name: "twitter:site", content: "@_marcba" },
+                    { name: "twitter:site", content: "@themarcba" },
                     {
                         name: "twitter:title",
                         content: node.title,
