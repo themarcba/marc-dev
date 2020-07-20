@@ -167,10 +167,16 @@ const UsesPage = props => {
 
                 <table className={mainStyles.table}>
                     <tr>
-                        <td>Laptop</td>
+                        <td>Desk</td>
                         <td>
-                            Macbook Pro 16", i9, 64GB
+                            <a href="https://www.fully.com/en-eu/jarvis-adjustable-height-desk-bamboo.html">
+                                Jarvis Bamboo Standing Desk
+                            </a>
                         </td>
+                    </tr>
+                    <tr>
+                        <td>Laptop</td>
+                        <td>Macbook Pro 16", i9, 64GB</td>
                     </tr>
                     <tr>
                         <td>Laptop stand</td>
